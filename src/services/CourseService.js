@@ -24,13 +24,14 @@ class CourseService{
 	}
 
 	findAllCourses = () => {
-		this.courses
+		 return this.courses
 	}
 
 	deleteCourse = deleteCourse => {
 		this.courses = this.courses.filter(
 				course => course.id !== deleteCourse.id
 			)
+		return this.courses
 	}
 
 	updateCourse = (id, course) => {
