@@ -15,7 +15,7 @@ class WhiteBoard extends Component{
 		this.state = {
 			newCourse : '',
 			courses : this.courseService.findAllCourses(),
-			selectCourse:"",
+			selectCourse:""
 		}
 	}
 

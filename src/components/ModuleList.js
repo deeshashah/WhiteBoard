@@ -8,7 +8,8 @@ class ModuleList extends Component{
 		this.state = {
 	      module: { title: '' },
 	      modules: this.props.modules,
-	      moduleEdited:""
+	      moduleEdited:"",
+
 	    };
 
 	}
@@ -38,6 +39,13 @@ class ModuleList extends Component{
 	        module: {title: event.target.value}
 	      });
 	  }
+
+	editRow = module => {
+	  this.setState(
+	      {
+	        module: {title: module}
+	      });	  
+	}  
 	render(){
 
 		return(
@@ -51,7 +59,7 @@ class ModuleList extends Component{
 		                    key={module.id}
 		                    module={module}
 		                    deleteModule ={this.deleteModule}
-		                    editModule={this.editModule}/>
+		                    editRow={this.editRow}/>
 		                )
 		              }
 		            )
@@ -62,7 +70,7 @@ class ModuleList extends Component{
 				    <div class="input-group mb-3">
 				      <div class="input-group-prepend">
 				      </div>
-				      <input onChange={this.titleChanged} type="text" class="form-control" aria-label="Amount (to the nearest dollar)"/>
+				      <input onChange={this.titleChanged} value={this.state.module.title} type="text" class="form-control" aria-label="Amount (to the nearest dollar)"/>
 				      <div class="input-group-append">
 				        <span class="input-group-text"><a onClick={this.createModule}><i class="cross-topic fa fa-plus"></i></a></span>
 				      </div>
