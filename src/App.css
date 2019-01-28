@@ -60,3 +60,43 @@
   margin-top: 20px;
 }
 
+.sidenav {
+  height: 100%; /* Full-height: remove this if you want "auto" height */
+  width: 20em; /* Set the width of the sidebar */
+  position: fixed; /* Fixed Sidebar (stay in place on scroll) */
+  z-index: 10;
+  top: 0; /* Stay at the top */
+  left: 0;
+  background-color: #111; /* Black */
+  overflow-x: hidden; /* Disable horizontal scroll */
+  padding-top: 4em;
+}
+
+/* The navigation menu links */
+.topic {
+    padding: 0.2em 0.2em 0.2em 0.2em;
+    margin: 0.5em;
+    text-decoration: none;
+    font-size: 1.5em;
+    color: white;
+    background-color: #4c4b4b;
+    display: block;
+    border-radius: 5px;
+}
+
+.topic a{
+  color: inherit;
+}
+
+.cross-topic {
+  float: right;
+}
+
+/* When you mouse over the navigation links, change their color */
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+.add-module{
+	margin: 12px;
+}

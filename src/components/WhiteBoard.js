@@ -1,8 +1,7 @@
 import React, {Component} from 'react'
-import NavBar from './NavBar.js'
 import CourseTable from './CourseTable.js'
 import CourseGrid from './CourseGrid.js'
-
+import CourseEditor from './CourseEditor.js'
 import CourseService from '../services/CourseService'
 import '../App.css'
 
@@ -15,7 +14,8 @@ class WhiteBoard extends Component{
 		this.courseService = new CourseService()
 		this.state = {
 			newCourse : '',
-			courses : this.courseService.findAllCourses()
+			courses : this.courseService.findAllCourses(),
+			selectCourse:"",
 		}
 	}
 
@@ -34,22 +34,35 @@ class WhiteBoard extends Component{
 		})
 	}
 
-
+	selectCourse = course =>
+		this.setState({selectedCourse: course})
 
 	render(){
 		return(
 			<div>
-				<NavBar addCourse = {this.addCourse} courseChange = {this.courseChange}/>
-
 				<Router>
 					<div>
 						<Link to="/course/table">Table</Link> |
 						<Link to="/course/grid">Grid</Link>
-						<Route path="/course/table" render={() => <CourseTable courses={this.state.courses}
-							deleteCourse = {this.deleteCourse}/>}/>
-						
-						<Route path="/course/grid" render={() => <CourseGrid courses={this.state.courses}
-							deleteCourse = {this.deleteCourse} addCourse ={this.addCourse}/>}/>
+						<Route path="/course/table" render={() => 
+							<CourseTable 
+							addCourse = {this.addCourse}
+							courses={this.state.courses}
+							deleteCourse = {this.deleteCourse}
+							selectCourse ={this.selectCourse}
+							/>}
+						/>
+						<Route path="/course/edit/:id"
+		                   exact
+		                   component={CourseEditor}/>
+						<Route path="/course/grid" render={() => 
+							<CourseGrid 
+							courses={this.state.courses}
+							deleteCourse = {this.deleteCourse} 
+							addCourse ={this.addCourse}
+							selectCourse = {this.selectCourse}
+							/>}
+						/>
 					</div>
 				</Router>
 

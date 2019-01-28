@@ -4,11 +4,17 @@ import {BrowserRouter as Router, Link, Route,} from 'react-router-dom'
 import '../App.css'
 
 
-const CourseTableRow = ({course, deleteCourse}) =>
+const CourseTableRow = ({course, deleteCourse, selectCourse}) =>
 	<tr>
 	  <Router>
 	  	<div>
-		  <td scope="row"><Link to={'/course/edit/${course.id}'}>{course.title}</Link></td>
+		  <td scope="row">
+		  	<Link 
+			  	onClick={() => selectCourse(course)}
+			  	to={`/course/edit/${course.id}`}
+			  > {course.title}
+		  </Link>
+		  </td>
 		</div>
 	  </Router>
 	  <td>me</td>

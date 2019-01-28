@@ -18,9 +18,12 @@ class CourseService{
 	}
 
 	findCourseById = courseId => {
-		this.courses = this.courses.find(
-				course => course.id === courseId
-			)
+		for(var i=0;i<this.courses.length;i++){
+			console.log("in here")
+			if(this.courses[i].id == courseId){
+				return this.courses[i];
+			}
+		}
 	}
 
 	findAllCourses = () => {
