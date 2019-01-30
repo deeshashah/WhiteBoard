@@ -3,6 +3,7 @@ import CourseTable from './CourseTable.js'
 import CourseGrid from './CourseGrid.js'
 import CourseEditor from './CourseEditor.js'
 import CourseService from '../services/CourseService'
+
 import '../App.css'
 
 import {BrowserRouter as Router, Link, Route} from 'react-router-dom'
@@ -11,7 +12,7 @@ class WhiteBoard extends Component{
 	constructor(props){
 		super(props);
 
-		this.courseService = new CourseService()
+		this.courseService = new CourseService();
 		this.state = {
 			newCourse : '',
 			courses : this.courseService.findAllCourses(),
@@ -40,6 +41,7 @@ class WhiteBoard extends Component{
 	render(){
 		return(
 			<div>
+				
 				<Router>
 					<div>
 						<Link to="/course/table">Table</Link> |

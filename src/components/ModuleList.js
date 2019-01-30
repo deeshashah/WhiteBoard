@@ -8,7 +8,7 @@ class ModuleList extends Component{
 		this.state = {
 	      module: { title: 'New Module' },
 	      modules: this.props.modules,
-	      selectedMdule: ''
+	      selectModule: ''
 	    };
 
 	}
@@ -21,6 +21,7 @@ class ModuleList extends Component{
 	        ]
 	      }
 	    )
+	    console.log(this.state.modules)
 	  }
 
 	select = (module) => {
@@ -79,7 +80,8 @@ class ModuleList extends Component{
 		                    module={module}
 		                    deleteModule ={this.deleteModule}
 		                    select = {this.select}
-		                    editRow={this.editRow}/>
+		                    editRow={this.editRow}
+		                    selectedModule={this.props.selectedModule}/>
 		                )
 		              }
 		            )

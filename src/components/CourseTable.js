@@ -5,8 +5,9 @@ import CourseService from '../services/CourseService'
 import '../App.css'
 
 
-const CourseTable = ({courses, deleteCourse}) => 
+const CourseTable = ({courses, addCourse, deleteCourse}) => 
 	<div>
+		<NavBar addCourse = {addCourse}/>
 		<table className="table">
 		  	<thead>
 		  		<tr>

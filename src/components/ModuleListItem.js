@@ -1,10 +1,10 @@
 import React, {Component} from 'react'
 
 
-const ModuleListItem = ({module, selectModule, deleteModule, editRow}) =>
+const ModuleListItem = ({module, selectModule, deleteModule, editRow, selectedModule}) =>
 	
-		<div class="topic">
-	        <a onClick={() => selectModule(module)}>
+		<div className={module===selectedModule?"active-topic":"topic"}  onClick={() => selectModule(module)}>
+	        <a>
 	        	{module.title}
 	        </a>
 	    	<a onClick={() => deleteModule(module)}><i class="fa fa-times float-right"></i></a>
