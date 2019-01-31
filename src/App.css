@@ -1,32 +1,241 @@
-.App {
-  text-align: center;
+.float{
+	position:fixed;
+	width:50px;
+	height:50px;
+	bottom:40px;
+	right:40px;
+	background-color:#d63031;
+	color:#FFF;
+	border-radius:50px;
+	text-align:center;
+	box-shadow: 2px 2px 3px #999;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
+.non-float{
+	width:45px;
+	height:45px;
+	bottom:40px;
+	background-color:#d63031;
+	color:#FFF;
+	border-radius:50px;
+	text-align:center;
+	box-shadow: 2px 2px 3px #999;
+	margin-left: 10px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.plus-button{
+	margin-top:17px;
+  margin-right: 10px;
+}
+
+
+.course-title{
+	width: 70em;
+	margin-left: 3em; 
+}
+
+.ownedby{
+	width: 10em;
+}
+
+.lastmodified{
+	width: 18em;
+}
+
+.plus-icon{
+	font-size: 50px;
+	color: red;
+}
+
+.table-header{
+  background-color: #ecf0f1;
+  height: 70px;
+  box-shadow: 5px 10px white;
+}
+/*.header-grid{
+  margin-left: 150px;
+  margin-right: 100px;
+}
+*/
+.header-title{
+  margin-top: 20px;
+}
+
+.sidenav {
+  height: 100%; /* Full-height: remove this if you want "auto" height */
+  width: 20em; /* Set the width of the sidebar */
+  position: fixed; /* Fixed Sidebar (stay in place on scroll) */
+  z-index: 10;
+  top: 0; /* Stay at the top */
+  left: 0;
+  background-color: #111; /* Black */
+  overflow-x: hidden; /* Disable horizontal scroll */
+  padding-top: 4em;
+}
+
+/* The navigation menu links */
+.topic {
+    padding: 0.2em 0.2em 0.2em 0.2em;
+    margin: 0.5em;
+    text-decoration: none;
+    font-size: 1.5em;
+    color: white;
+    background-color: #4c4b4b;
+    display: block;
+    border-radius: 5px;
+}
+
+.active-topic {
+    padding: 0.2em 0.2em 0.2em 0.2em;
+    margin: 0.5em;
+    text-decoration: none;
+    font-size: 1.5em;
+    color: white;
+    background-color: red;
+    display: block;
+    border-radius: 5px;
+}
+
+.topic a{
+  color: inherit;
+}
+
+.cross-topic {
+  float: right;
+}
+
+/* When you mouse over the navigation links, change their color */
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+.add-module{
+	margin: 12px;
+}
+
+.fa-plus{
+	
+  margin-left: 10px;
+}
+.fa-check{
+  margin-left: 10px;
+}
+.plus{
   color: white;
 }
-
-.App-link {
-  color: #61dafb;
+.row {
+  background: #f8f9fa;
+  margin-top: 20px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.col {
+  border: solid 1px #6c757d;
+  padding: 10px;
+}
+
+#customNavbar {
+  z-index: 100;
+}
+
+ /* The sidebar menu */
+.sidenav {
+  height: 100%; /* Full-height: remove this if you want "auto" height */
+  width: 20em; /* Set the width of the sidebar */
+  position: fixed; /* Fixed Sidebar (stay in place on scroll) */
+  z-index: 10;
+  top: 0; /* Stay at the top */
+  left: 0;
+  background-color: #111; /* Black */
+  overflow-x: hidden; /* Disable horizontal scroll */
+  padding-top: 4em;
+}
+
+/* The navigation menu links */
+.topic {
+    padding: 0.2em 0.2em 0.2em 0.2em;
+    margin: 0.5em;
+    text-decoration: none;
+    font-size: 1.5em;
+    color: white;
+    background-color: #4c4b4b;
+    display: block;
+    border-radius: 5px;
+}
+
+.topic a{
+  color: inherit;
+}
+
+.cross-topic {
+  float: right;
+}
+
+/* When you mouse over the navigation links, change their color */
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+/* Style page content */
+.main {
+  margin-left: 10em; /* Same as the width of the sidebar */
+  padding: 0px 10px;
+}
+
+/* On smaller screens, where height is less than 450px, change the style of the sidebar (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+  .sidenav a {font-size: 18px;}
+} 
+
+.widget{
+  border: 1px solid #cecece;
+}
+
+.inline-select {
+  width: auto !important;
+}
+
+.add-widget-plus{
+  float: right !important;
+}
+
+.topic-pill{
+	margin:10px;
+}
+
+.display-on{
+  display: none
+}
+
+
+@media screen and (max-width: 1350px) {
+  .sidenav {
+  height: 100%; /* Full-height: remove this if you want "auto" height */
+  width: 13em; /* Set the width of the sidebar */
+  position: fixed; /* Fixed Sidebar (stay in place on scroll) */
+  z-index: 10;
+  top: 0; /* Stay at the top */
+  left: 0;
+  background-color: #111; /* Black */
+  overflow-x: hidden; /* Disable horizontal scroll */
+  padding-top: 4em;
+}
+}
+
+/* On screens that are 600px or less, set the background color to olive */
+@media screen and (max-width: 900px) {
+  .sidenav {
+  height: 100%; /* Full-height: remove this if you want "auto" height */
+  width: 5em; /* Set the width of the sidebar */
+  position: fixed; /* Fixed Sidebar (stay in place on scroll) */
+  z-index: 10;
+  top: 0; /* Stay at the top */
+  left: 0;
+  background-color: #111; /* Black */
+  overflow-x: hidden; /* Disable horizontal scroll */
+  padding-top: 4em;
+}
+}
+
+.topic-pills .topic-link.active{
+  background-color: red;
 }
