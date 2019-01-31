@@ -32,7 +32,7 @@ class ImageWidget extends Component{
           <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Widget text"/>
           <br></br>
           <h3>Preview</h3>
-          <img src="../images/widget-image.jpeg"/>
+          <img src="https://via.placeholder.com/150"/>
           <br></br>
         </div>
       </div>

@@ -7,15 +7,14 @@ import '../App.css'
 const CourseTableRow = ({course, deleteCourse, selectCourse}) =>
 	<tr>
 	  <Router>
-	  	<div>
 		  <td scope="row">
-		  	<Link 
-			  	onClick={() => selectCourse(course)}
-			  	to={`/course/edit/${course.id}`}
-			  > {course.title}
-		  </Link>
+			  	<Link 
+				  	onClick={() => selectCourse(course)}
+				  	to={`/course/edit/${course.id}`}
+				  > {course.title}
+			  </Link>
 		  </td>
-		</div>
+		
 	  </Router>
 	  <td>me</td>
 	  <td>6:45PM</td>

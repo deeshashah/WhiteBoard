@@ -22,7 +22,7 @@ class NavBar extends Component{
 				<nav className="navbar navbar-expand-lg navbar-dark bg-primary">
 					<a className="navbar-brand" href="#"><b>Course Manager</b></a>
 						<a className="btn btn-primary" href="#">Home</a>
-						<input onChange={this.formChanged}/>
+						<input onChange={this.formChanged} placeholder="New course title"/>
 						<a onClick={() => this.props.addCourse(this.newCourse)} className="non-float">
 					    <i className="fa fa-plus plus-button"></i>
 					    

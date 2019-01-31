@@ -5,16 +5,16 @@ import CourseService from '../services/CourseService'
 import '../App.css'
 
 
-const CourseTable = ({courses, addCourse, deleteCourse}) => 
+const CourseTable = ({courses, addCourse, deleteCourse, hideNavBar}) => 
 	<div>
-		<NavBar addCourse = {addCourse}/>
+		
 		<table className="table">
-		  	<thead>
+		  	<thead class="thead-dark">
 		  		<tr>
-			        <th className="course-title">Title</th>
-			        <th className="ownedby">Owned by</th>
-			        <th className="lastmodified">Last modified</th>
-			        <th></th>
+			        <th scope="col">Title</th>
+			        <th scope="col">Owned by</th>
+			        <th scope="col">Last modified</th>
+			        <th scope="col"></th>
 		        </tr>
 		    </thead>
 		    <tbody>

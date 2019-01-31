@@ -25,6 +25,7 @@
 
 .plus-button{
 	margin-top:17px;
+  margin-right: 10px;
 }
 
 
@@ -112,10 +113,16 @@
 	margin: 12px;
 }
 
-.plus{
-	color: white
+.fa-plus{
+	
+  margin-left: 10px;
 }
-
+.fa-check{
+  margin-left: 10px;
+}
+.plus{
+  color: white;
+}
 .row {
   background: #f8f9fa;
   margin-top: 20px;
@@ -193,4 +200,42 @@
 
 .topic-pill{
 	margin:10px;
+}
+
+.display-on{
+  display: none
+}
+
+
+@media screen and (max-width: 1350px) {
+  .sidenav {
+  height: 100%; /* Full-height: remove this if you want "auto" height */
+  width: 13em; /* Set the width of the sidebar */
+  position: fixed; /* Fixed Sidebar (stay in place on scroll) */
+  z-index: 10;
+  top: 0; /* Stay at the top */
+  left: 0;
+  background-color: #111; /* Black */
+  overflow-x: hidden; /* Disable horizontal scroll */
+  padding-top: 4em;
+}
+}
+
+/* On screens that are 600px or less, set the background color to olive */
+@media screen and (max-width: 900px) {
+  .sidenav {
+  height: 100%; /* Full-height: remove this if you want "auto" height */
+  width: 5em; /* Set the width of the sidebar */
+  position: fixed; /* Fixed Sidebar (stay in place on scroll) */
+  z-index: 10;
+  top: 0; /* Stay at the top */
+  left: 0;
+  background-color: #111; /* Black */
+  overflow-x: hidden; /* Disable horizontal scroll */
+  padding-top: 4em;
+}
+}
+
+.topic-pills .topic-link.active{
+  background-color: red;
 }

@@ -88,18 +88,13 @@ class ModuleList extends Component{
 		          }
 
 	      		<div class="form-group add-module">
-				  <div class="form-group">
 				    <div class="input-group mb-3">
-				      <div class="input-group-prepend">
-				      </div>
 				      <input onChange={this.titleChanged} value={this.state.module.title} type="text" class="form-control" aria-label="Amount (to the nearest dollar)"/>
 				      <div class="input-group-append">
 				        <span class="input-group-text"><a onClick={this.createModule}><i class="cross-topic fa fa-plus"></i></a></span>
 				        <span class="input-group-text"><a onClick={this.updateModule}><i class="fa fa-check"></i></a></span>
-
 				      </div>
 				    </div>
-				  </div>
 				</div>	
 				
 	      	</div>

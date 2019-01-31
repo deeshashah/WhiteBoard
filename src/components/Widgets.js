@@ -26,6 +26,7 @@ class Widgets extends Component{
 		    	<br></br>
 		    	<br></br>
 		    	<LinkWidget/>
+		    	<br></br>
 		  	</div>
 		    
 
