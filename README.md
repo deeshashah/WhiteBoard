@@ -1,4 +1,4 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project hosted here: [React App](https://infinite-scrubland-97771.herokuapp.com/).
 
 ## Available Scripts
 
