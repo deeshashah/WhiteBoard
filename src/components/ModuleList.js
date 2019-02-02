@@ -87,12 +87,12 @@ class ModuleList extends Component{
 		            )
 		          }
 
-	      		<div class="form-group add-module">
-				    <div class="input-group mb-3">
-				      <input onChange={this.titleChanged} value={this.state.module.title} type="text" class="form-control" aria-label="Amount (to the nearest dollar)"/>
-				      <div class="input-group-append">
-				        <span class="input-group-text"><a onClick={this.createModule}><i class="cross-topic fa fa-plus"></i></a></span>
-				        <span class="input-group-text"><a onClick={this.updateModule}><i class="fa fa-check"></i></a></span>
+	      		<div className="form-group add-module">
+				    <div className="input-group mb-3">
+				      <input onChange={this.titleChanged} value={this.state.module.title} type="text" className="form-control" aria-label="Amount (to the nearest dollar)"/>
+				      <div className="input-group-append">
+				        <span className="input-group-text"><a onClick={this.createModule}><i className="cross-topic fa fa-plus"></i></a></span>
+				        <span className="input-group-text"><a onClick={this.updateModule}><i className="fa fa-check"></i></a></span>
 				      </div>
 				    </div>
 				</div>	

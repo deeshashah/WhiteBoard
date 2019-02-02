@@ -1,5 +1,4 @@
 import React, {Component} from 'react'
-import '../App.css'
 
 class TopicPills extends Component{
 	constructor(props){
@@ -28,8 +27,8 @@ class TopicPills extends Component{
 			    	}
 			    	<li className="nav-item topic-pill">
 		          		<input onChange={this.props.topicChange} value={this.props.changeTopic.title} placeholder="Add a new topic"/>
-		          		<a onClick={this.props.addTopic}><i class="fa fa-plus"></i></a>
-		          		<a onClick={this.props.updateTopic}><i class="fa fa-check"></i></a>
+		          		<a onClick={this.props.addTopic}><i className="fa fa-plus"></i></a>
+		          		<a onClick={this.props.updateTopic}><i className="fa fa-check"></i></a>
 		          	</li>
 			    </ul>
 		    
