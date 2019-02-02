@@ -9,7 +9,7 @@ const CourseTable = ({courses, addCourse, deleteCourse, hideNavBar}) =>
 	<div>
 		
 		<table className="table">
-		  	<thead class="thead-dark">
+		  	<thead className="thead-dark">
 		  		<tr>
 			        <th scope="col">Title</th>
 			        <th scope="col">Owned by</th>

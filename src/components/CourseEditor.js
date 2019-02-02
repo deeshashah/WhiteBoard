@@ -63,6 +63,7 @@ class CourseEditor extends Component{
 		this.setState({
 	      module: module,
 	      selectedLesson:selectedLesson
+	      
 	    });
 
 	}

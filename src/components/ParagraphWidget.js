@@ -7,31 +7,31 @@ class ParagraphWidget extends Component{
 
 	render(){
 		return (
-			<div class="container widget">
-      <div class="row">
-        <div class="col-md-8">
+			<div className="container widget">
+      <div className="row">
+        <div className="col-md-8">
           <h3>Paragraph widget</h3>
         </div>
-        <div class="col-md-4">
-          <button class="btn btn-warning"> <i class="fa fa-arrow-down"></i> </button>
-          <button class="btn btn-warning"> <i class="fa fa-arrow-up"></i> </button>
-          <select class="inline-select custom-select">
+        <div className="col-md-4">
+          <button className="btn btn-warning"> <i className="fa fa-arrow-down"></i> </button>
+          <button className="btn btn-warning"> <i className="fa fa-arrow-up"></i> </button>
+          <select className="inline-select custom-select">
             <option selected="">Paragraph</option>
             <option value="3">Heading</option>
             <option value="1">List</option>
             <option value="2">Paragraph</option>
             <option value="3">Image</option>
           </select>
-          <button class="btn btn-danger"> <i class="fa fa-close"></i> </button>
+          <button className="btn btn-danger"> <i className="fa fa-close"></i> </button>
         </div>
       </div>
-      <div class="row">
-        <div class="col-md-12">
-          <div class="form-group">
-            <textarea class="form-control" id="exampleTextarea" rows="3" placeholder="Put each item in a separate row"></textarea>
+      <div className="row">
+        <div className="col-md-12">
+          <div className="form-group">
+            <textarea className="form-control" id="exampleTextarea" rows="3" placeholder="Put each item in a separate row"></textarea>
           </div>
           <br></br>
-          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Heading text"/>
+          <input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Heading text"/>
           <br></br>
           <h3>Preview</h3>
           <p>Lorem Ipsum</p>
