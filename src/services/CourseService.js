@@ -1,8 +1,41 @@
 import courses from './courses.json'
 
+// const topics = [
+
+//               {
+//               	"id" : 1
+//                 "title": "DOM",
+//                 "widgets": [
+//                   {
+//                     "type": "HEADING",
+//                     "size": 1,
+//                     "text": "The Document Object Model"
+//                   },
+//                   {
+//                     "type": "PARAGRAPH",
+//                     "text": "This topic introduces the DOM"
+//                   },
+//                   {
+//                     "type": "LIST",
+//                     "items": "Nodes,Attributes,Tag names,IDs,Styles,Classes"
+//                   },
+//                   {
+//                     "type": "IMAGE",
+//                     "src": "https://picsum.photos/200"
+//                   },
+//                   {
+//                     "type": "LINK",
+//                     "title": "The DOM",
+//                     "href": "https://en.wikipedia.org/wiki/Document_Object_Model"
+//                   }
+//                 ]
+//                }
+//             ]
+
 class CourseService{
 	constructor(){
 		this.courses = courses;
+		//this.topics = topics;
 	}
 
 	createCourse = course => {
@@ -43,6 +76,14 @@ class CourseService{
 			}
 		}
 	}
+
+	// createWidget = (topicId, widget) => {
+	// 	for(var i=0; i<this.topics.length;i++){
+	// 		if(this.topics[i].id == topicId){
+	// 			widgets = this.topics[i].widgets.push(widget);
+	// 		}
+	// 	}
+	// }
 }
 
 export default CourseService
