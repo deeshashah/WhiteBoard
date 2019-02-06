@@ -15,9 +15,7 @@ const store = createStore(widgetReducer)
 
 
 ReactDOM.render(
-		<Provider store={store}>
-			<WidgetListContainer/>
-		</Provider>,
+		<WhiteBoard/>,
 		document.getElementById("root")
 
 	);

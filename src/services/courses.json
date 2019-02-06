@@ -1,66 +1,360 @@
 [
-  {
-    "id": "123",
-    "title": "CS5610",
-    "modules": [
-      {
-        "title": "Week 1",
-        "lessons": [
-          {
-            "title": "HTML",
-            "topics": [
-              {
-                "title": "DOM",
-                "widgets": [
-                  {
-                    "type": "HEADING",
-                    "size": 1,
-                    "text": "The Document Object Model"
-                  },
-                  {
-                    "type": "PARAGRAPH",
-                    "text": "This topic introduces the DOM"
-                  },
-                  {
-                    "type": "LIST",
-                    "items": "Nodes,Attributes,Tag names,IDs,Styles,Classes"
-                  },
-                  {
-                    "type": "IMAGE",
-                    "src": "https://picsum.photos/200"
-                  },
-                  {
-                    "type": "LINK",
-                    "title": "The DOM",
-                    "href": "https://en.wikipedia.org/wiki/Document_Object_Model"
-                  }
+    {
+        "id": "123",
+        "title": "CS5610",
+        "modules": [
+            {
+                "id" : "21",
+                "title": "Week 1",
+                "lessons": [
+                    {
+                        "id" : "31",
+                        "title": "HTML",
+                        "topics": [
+                            {
+                                "id" : "41",
+                                "title": "DOM",
+                                "widgets": [
+                                    {
+                                        "id" : "51",
+                                        "type": "HEADING",
+                                        "size": 1,
+                                        "text": "The Document Object Model"
+                                    },
+                                    {
+                                        "id" : "52",
+                                        "type": "PARAGRAPH",
+                                        "text": "This topic introduces the DOM"
+                                    },
+                                    {
+                                        "id" : "53",
+                                        "type": "LIST",
+                                        "items": "Nodes,Attributes,Tag names,IDs,Styles,Classes"
+                                    },
+                                    {
+                                        "id" : "54",
+                                        "type": "IMAGE",
+                                        "src": "https://picsum.photos/200"
+                                    },
+                                    {
+                                        "id" : "55",
+                                        "type": "LINK",
+                                        "title": "The DOM",
+                                        "href": "https://en.wikipedia.org/wiki/Document_Object_Model"
+                                    }
+                                ]
+                            },
+                            {
+                                "id" : "42",
+                                "title": "Tags",
+                                "widgets": [
+                                    {
+                                        "id" : "56",
+                                        "type": "HEADING",
+                                        "size": 1,
+                                        "text": "Tags in HTML"
+                                    },
+                                    {
+                                        "id" : "57",
+                                        "type": "PARAGRAPH",
+                                        "text": "This topic introduces tags in HTML"
+                                    },
+                                    {
+                                        "id" : "58",
+                                        "type": "LIST",
+                                        "items": "Nodes,Attributes,Tag names,IDs,Styles,Classes"
+                                    },
+                                    {
+                                        "id" : "59",
+                                        "type": "IMAGE",
+                                        "src": "https://picsum.photos/200"
+                                    },
+                                    {
+                                        "id" : "501",
+                                        "type": "LINK",
+                                        "title": "The DOM",
+                                        "href": "https://en.wikipedia.org/wiki/Document_Object_Model"
+                                    }
+
+                                ]
+                            },
+                            {
+                                "id" : "43",
+                                "title": "Attributes",
+                                "widgets": [
+                                    {
+                                        "id" : "502",
+                                        "type": "HEADING",
+                                        "size": 1,
+                                        "text": "The Document Object Model"
+                                    },
+                                    {
+                                        "id" : "503",
+                                        "type": "PARAGRAPH",
+                                        "text": "This topic introduces the DOM"
+                                    },
+                                    {
+                                        "id" : "504",
+                                        "type": "LIST",
+                                        "items": "Nodes,Attributes,Tag names,IDs,Styles,Classes"
+                                    },
+                                    {
+                                        "id" : "505",
+                                        "type": "IMAGE",
+                                        "src": "https://picsum.photos/200"
+                                    },
+                                    {
+                                        "id" : "506",
+                                        "type": "LINK",
+                                        "title": "The DOM",
+                                        "href": "https://en.wikipedia.org/wiki/Document_Object_Model"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "title": "CSS",
+                        "topics": [
+                            {
+                                "id" : "42",
+                                "title" : "Borders",
+                                "widgets": [
+                                    {
+                                        "id" : "507",
+                                        "type": "HEADING",
+                                        "size": 1,
+                                        "text": "Borders in CSS"
+                                    },
+                                    {
+                                        "id" : "508",
+                                        "type": "PARAGRAPH",
+                                        "text": "This topic introduces borders in CSS"
+                                    },
+                                    {
+                                        "id" : "509",
+                                        "type": "LIST",
+                                        "items": "Nodes,Attributes,Tag names,IDs,Styles,Classes"
+                                    },
+                                    {
+                                        "id" : "510",
+                                        "type": "IMAGE",
+                                        "src": "https://picsum.photos/200"
+                                    },
+                                    {
+                                        "id" : "511",
+                                        "type": "LINK",
+                                        "title": "The DOM",
+                                        "href": "https://en.wikipedia.org/wiki/Document_Object_Model"
+                                    }
+                                ]
+                            },
+                            {
+                                "id" : "43",
+                                "title" : "Fonts",
+                                "widgets": [
+                                    {
+                                        "id" : "512",
+                                        "type": "HEADING",
+                                        "size": 1,
+                                        "text": "Fonts in CSS"
+                                    },
+                                    {
+                                        "id" : "513",
+                                        "type": "PARAGRAPH",
+                                        "text": "This topic introduces how to add fonts in CSS"
+                                    },
+                                    {
+                                        "id" : "514",
+                                        "type": "LIST",
+                                        "items": "Nodes,Attributes,Tag names,IDs,Styles,Classes"
+                                    },
+                                    {
+                                        "id" : "515",
+                                        "type": "IMAGE",
+                                        "src": "https://picsum.photos/200"
+                                    },
+                                    {
+                                        "id" : "516",
+                                        "type": "LINK",
+                                        "title": "The DOM",
+                                        "href": "https://en.wikipedia.org/wiki/Document_Object_Model"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
                 ]
-              },
-              {
-                "title": "Tags",
-                "widgets": []
-              },
-              {
-                "title": "Attributes",
-                "widgets": []
-              }
-            ]
-          },
-          {
-            "title": "CSS",
-            "topics": []
-          }
+            },
+            {
+                "id" : "22",
+                "title": "Week 2",
+                "lessons": [
+                    {
+                        "id": "32",
+                        "title" : "Javascript",
+                        "topics" : [
+                            {
+                                "id" : "44",
+                                "title" : "Variables",
+                                "widgets": [
+                                    {
+                                        "id" : "517",
+                                        "type": "HEADING",
+                                        "size": 1,
+                                        "text": "Variables"
+                                    },
+                                    {
+                                        "id" : "518",
+                                        "type": "PARAGRAPH",
+                                        "text": "This topic introduces variables in Javascript"
+                                    },
+                                    {
+                                        "id" : "519",
+                                        "type": "LIST",
+                                        "items": "Nodes,Attributes,Tag names,IDs,Styles,Classes"
+                                    },
+                                    {
+                                        "id" : "520",
+                                        "type": "IMAGE",
+                                        "src": "https://picsum.photos/200"
+                                    },
+                                    {
+                                        "id" : "521",
+                                        "type": "LINK",
+                                        "title": "The DOM",
+                                        "href": "https://en.wikipedia.org/wiki/Document_Object_Model"
+                                    }
+                                ]
+
+                            },
+                            {
+                                "id" : "45",
+                                "title" : "Data Types",
+                                "widgets" : [
+                                    {
+                                        "id" : "522",
+                                        "type": "HEADING",
+                                        "size": 1,
+                                        "text": "Data types"
+                                    },
+                                    {
+                                        "id" : "523",
+                                        "type": "PARAGRAPH",
+                                        "text": "This topic introduces Data types in javascript"
+                                    },
+                                    {
+                                        "id" : "524",
+                                        "type": "LIST",
+                                        "items": "Nodes,Attributes,Tag names,IDs,Styles,Classes"
+                                    },
+                                    {
+                                        "id" : "525",
+                                        "type": "IMAGE",
+                                        "src": "https://picsum.photos/200"
+                                    },
+                                    {
+                                        "id" : "526",
+                                        "type": "LINK",
+                                        "title": "The DOM",
+                                        "href": "https://en.wikipedia.org/wiki/Document_Object_Model"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
         ]
-      },
-      {
-        "title": "Week 2",
-        "lessons": []
-      }
-    ]
-  },
-  {
-    "id": "234",
-    "title": "CS5200",
-    "modules": []
-  }
+    },
+    {
+        "id": "234",
+        "title": "CS5200",
+        "modules": [
+            {
+                "id" : "22",
+                "title" : "SQL",
+                "lessons" : [
+                    {
+                        "id" : "33",
+                        "title" : "Statements",
+                        "topics" : [
+                            {
+                                "id" : "46",
+                                "title" : "SELECT",
+                                "widgets" : [
+                                    {
+                                        "id" : "527",
+                                        "type": "HEADING",
+                                        "size": 1,
+                                        "text": "Data types"
+                                    },
+                                    {
+                                        "id" : "528",
+                                        "type": "PARAGRAPH",
+                                        "text": "This topic introduces Data types in javascript"
+                                    },
+                                    {
+                                        "id" : "529",
+                                        "type": "LIST",
+                                        "items": "Nodes,Attributes,Tag names,IDs,Styles,Classes"
+                                    }
+                                ]
+                            },
+                            {
+                                "id" : "47",
+                                "title" : "UPDATE",
+                                "widgets" : [
+                                    {
+                                        "id" : "530",
+                                        "type": "HEADING",
+                                        "size": 1,
+                                        "text": "Data types"
+                                    },
+                                    {
+                                        "id" : "531",
+                                        "type": "PARAGRAPH",
+                                        "text": "This topic introduces Data types in javascript"
+                                    },
+                                    {
+                                        "id" : "532",
+                                        "type": "LIST",
+                                        "items": "Nodes,Attributes,Tag names,IDs,Styles,Classes"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "id" : "34",
+                        "title" : "Joins",
+                        "topics" : [
+                            {
+                                "id": "48",
+                                "title" : "Inner Join",
+                                "widgets" : [
+                                    {
+                                        "id" : "533",
+                                        "type": "HEADING",
+                                        "size": 1,
+                                        "text": "Data types"
+                                    },
+                                    {
+                                        "id" : "534",
+                                        "type": "PARAGRAPH",
+                                        "text": "This topic introduces Data types in javascript"
+                                    },
+                                    {
+                                        "id" : "535",
+                                        "type": "LIST",
+                                        "items": "Nodes,Attributes,Tag names,IDs,Styles,Classes"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
 ]
