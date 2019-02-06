@@ -7,19 +7,27 @@ import LinkWidget from './LinkWidget'
 import WidgetComponent from './WidgetComponent'
 
 
-const Widgets = ({widgets, updateWidget}) => 
-	<div>
-		<h3>Widgets : {widgets.length}</h3>
-		{
-			widgets.map(widget =>
-				<WidgetComponent
-					key={widget.id}
-					widget={widget}
-					updateWidget={updateWidget}
-				/>
-			)
-		}
-	</div>
+const Widgets = ({widgets, updateWidget, loadWidgets}) =>{
+		loadWidgets();
+		return(<div>
+			<h3>Widgets : {widgets.length}</h3>
+			<div className="list-group">
+			{
+				widgets.map(widget =>
+					<WidgetComponent
+						key={widget.id}
+						widget={widget}
+						updateWidget={updateWidget}
+
+					/>
+
+				)
+			}
+			</div>
+		</div>)
+
+}
+
 
 
 // class Widgets extends Component{

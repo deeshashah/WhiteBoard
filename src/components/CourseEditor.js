@@ -5,6 +5,12 @@ import LessonTabs from "./LessonTabs"
 import TopicPills from "./TopicPills"
 
 import Widgets from "./Widgets"
+import WidgetListContainer from "../containers/WidgetListContainer";
+import widgetReducer from '../reducers/WidgetReducer'
+import {createStore} from 'redux'
+import {Provider} from 'react-redux'
+
+const store = createStore(widgetReducer)
 
 class CourseEditor extends Component{
 	constructor(props){
@@ -21,17 +27,20 @@ class CourseEditor extends Component{
 			selectedLesson : this.course.modules[0].lessons[0],
 			changeLesson : {title:'', topics:[]},
 			selectedTopic : this.course.modules[0].lessons[0].topics[0],
-			changeTopic: {title: ''}
+			changeTopic: {title: ''},
+			widgets: this.course.modules[0].lessons[0].topics[0].widgets
 		}
 
 
 	}
 
 	selectModule = module => {
+
 		this.setState({
 	      module: module,
 	      selectedLesson:module.lessons[0],
-			selectedTopic : module.lessons[0].topics[0]
+			selectedTopic : module.lessons[0].topics[0],
+			widgets:module.lessons[0].topics[0].widgets
 
 		});
 
@@ -66,14 +75,18 @@ class CourseEditor extends Component{
 		this.setState({
 			selectedLesson:lesson,
 			selectedTopic : lesson.topics[0],
+			widgets: lesson.topics[0].widgets
+
 		})
+
 
 
 	}
 
 	selectTopic = (topic) => {
 		this.setState({
-			selectedTopic : topic
+			selectedTopic : topic,
+			widgets:topic.widgets
 		})
 	}  
 
@@ -137,7 +150,7 @@ class CourseEditor extends Component{
 		this.setState({
 			selectedLesson:lesson
 		})
-	}
+	};
 
 	deleteTopic = (topicDelete) => {
 		const selectedLesson = this.state.selectedLesson
@@ -147,13 +160,13 @@ class CourseEditor extends Component{
 		this.setState({
 			selectedLesson : selectedLesson,
 		})
-	}
+	};
 
 	editTopic = (topic) => {
 		this.setState({
 			changeTopic : {title: topic.title}
 		})
-	}
+	};
 
 	updateTopic = () => {
 		const lesson = this.state.selectedLesson
@@ -168,7 +181,13 @@ class CourseEditor extends Component{
 		this.setState({
 			selectedLesson:lesson
 		})
-	}
+	};
+
+	widgets = () => {
+		const allWidgets = this.courseService.findWidgets(this.state.selectedTopic.id);
+
+		console.log(allWidgets.length);
+	};
 	
 	render(){
 		return(
@@ -218,6 +237,9 @@ class CourseEditor extends Component{
 	                	editTopic={this.editTopic}
 	                	updateTopic={this.updateTopic}
 	                />
+	                <Provider store={store}>
+						<WidgetListContainer widgets={this.state.widgets}/>
+					</Provider>
 	                <br></br>
 
 	                </div>

@@ -6,7 +6,7 @@ import ImageWidget from './ImageWidget'
 import LinkWidget from './LinkWidget'
 
 const WidgetComponent = ({widget, updateWidget}) =>
-	<div className="container">
+	<div className="container widget">
 		<div className="row">
 	        <div className="col-md-8">
 	          <h3>{widget.type.toLowerCase()} widget</h3>
@@ -14,11 +14,14 @@ const WidgetComponent = ({widget, updateWidget}) =>
 	        <div className="col-md-4">
 	          <button className="btn btn-warning"> <i className="fa fa-arrow-down"></i> </button>
 	          <button className="btn btn-warning"> <i className="fa fa-arrow-up"></i> </button>
-	          <select className="inline-select custom-select" value={widget.type}
-	          	onChange={(event)=>{
-	          		widget.type = event.target.value
-	          		updateWidget(widget)
-	          	}}>
+	          <select
+				  onChange={(event)=>{
+					  widget.type = event.target.value
+					  updateWidget(widget)
+				  }}
+				  className="inline-select custom-select"
+				  value={widget.type}
+	          	>
 	            <option value="HEADING">Heading</option>
 	            <option value="LIST">List</option>
 	            <option value="PARAGRAPH">Paragraph</option>
@@ -27,14 +30,15 @@ const WidgetComponent = ({widget, updateWidget}) =>
 	          </select>
 	          <button className="btn btn-danger"> <i className="fa fa-close"></i> </button>
 	        </div>
+		</div>
 	        {
-	        	widget.type=='HEADING' && <HeadingWidget 
+	        	widget.type=='HEADING' && <HeadingWidget
 	        		updateWidget={updateWidget}
 	        		widget={widget}/> ||
 	        	widget.type=='LIST' && <ListWidget
 	        		updateWidget={updateWidget}
 	        		widget={widget}/> ||
-	        	widget.type=='PARAGRAPH' && <ParagraphWidget 
+	        	widget.type=='PARAGRAPH' && <ParagraphWidget
 	        		updateWidget = {updateWidget}
 	        		widget ={widget}/> ||
 	        	widget.type=='IMAGE' && <ImageWidget
@@ -45,6 +49,6 @@ const WidgetComponent = ({widget, updateWidget}) =>
 	        		widget={widget}/>
 	        }
       </div>
-	</div>	
+
 
 export default WidgetComponent;

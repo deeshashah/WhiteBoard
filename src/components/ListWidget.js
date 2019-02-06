@@ -1,7 +1,7 @@
 import React from 'react'
 
 const ListWidget = ({widget, updateWidget}) => 
-		<div className="container widget">
+		<div className="container">
 	      <div className="row">
 	        <div className="col-md-12">
 	          <div className="form-group">

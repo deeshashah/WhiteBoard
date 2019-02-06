@@ -2,7 +2,7 @@ import React from 'react'
 
 
 const ImageWidget = ({widget, updateWidget}) => 
-			<div className="container widget">
+    <div className="container">
       
       <div className="row">
         <div className="col-md-12">

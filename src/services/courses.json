@@ -97,18 +97,8 @@
                                         "id" : "504",
                                         "type": "LIST",
                                         "items": "Nodes,Attributes,Tag names,IDs,Styles,Classes"
-                                    },
-                                    {
-                                        "id" : "505",
-                                        "type": "IMAGE",
-                                        "src": "https://picsum.photos/200"
-                                    },
-                                    {
-                                        "id" : "506",
-                                        "type": "LINK",
-                                        "title": "The DOM",
-                                        "href": "https://en.wikipedia.org/wiki/Document_Object_Model"
                                     }
+
                                 ]
                             }
                         ]
