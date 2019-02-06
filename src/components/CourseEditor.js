@@ -35,8 +35,33 @@ class CourseEditor extends Component{
 
 		});
 
-	}
-	 
+	};
+
+	createModule = (module) => {
+		const course = this.courseService.createModule(this.state.course.id, module);
+		this.setState({
+			course : course
+		})
+	};
+
+	deleteModule = (module, moduleTitle) => {
+
+		const course = this.courseService.deleteModule(this.state.course.id, module);
+		this.setState({
+			course : course
+		})
+	};
+
+	updateModule = (module, moduleTitle) => {
+		const course = this.courseService.updateModule(this.state.course.id, this.state.module, moduleTitle);
+		this.setState({
+			course:course
+		})
+	};
+
+
+
+
 	selectLesson = lesson => {
 		this.setState({
 			selectedLesson:lesson,
@@ -166,13 +191,16 @@ class CourseEditor extends Component{
             		<div className="col-lg-2 col-sm-1">
 	            	<div className="sidenav">
 	            			<br></br>
-							<ModuleList
+						<ModuleList
 							course={this.state.course}
 							selectModule={this.selectModule}
+							createModule = {this.createModule}
+							deleteModule = {this.deleteModule}
 							modules={this.course.modules}
 							updateModule={this.updateModule}
 							selectedModule = {this.state.module}
-							/>
+							editRow = {this.editRow}
+						/>
 
 	                </div>
 	                </div>
