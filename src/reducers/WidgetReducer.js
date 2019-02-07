@@ -6,7 +6,7 @@ function toggle (state) {
     return newState;
 }
 
-const widgetReducer = (state = {widgets:[], checked: false}, action) => {
+const widgetReducer = (state = {widgets:[], checked: true}, action) => {
     switch(action.type){
         case 'LOAD_WIDGETS':
             state.widgets = action.widgets;
