@@ -4,6 +4,7 @@ import Widgets from '../components/Widgets'
 
 const stateToPropertyMapper = (state, ownProps) =>({
 	widgets:state.widgets,
+	checked : state.checked,
 });
 
 
@@ -15,11 +16,15 @@ const dispatchToPropertyMatcher = (dispatch, ownProps) => ({
 			widget : widget,
 		}),
 	loadWidgets : () =>
-	{
 		dispatch({
 			type:'LOAD_WIDGETS',
 			widgets : ownProps.widgets,
-		})}
+		}),
+	togglePreview: () =>
+		dispatch({
+			type:'TOGGLE_PREVIEW',
+		})
+
 });
 
 const WidgetListContainer = connect(stateToPropertyMapper, dispatchToPropertyMatcher)(Widgets)

@@ -5,11 +5,17 @@ import ParagraphWidget from './ParagraphWidget'
 import ImageWidget from './ImageWidget'
 import LinkWidget from './LinkWidget'
 
-const WidgetComponent = ({widget, updateWidget}) =>
+function lowerCaseAllWordsExceptFirstLetters(string) {
+	return string.replace(/\w\S*/g, function (word) {
+		return word.charAt(0) + word.slice(1).toLowerCase();
+	});
+}
+
+const WidgetComponent = ({widget, updateWidget, checked}) =>
 	<div className="container widget">
 		<div className="row">
 	        <div className="col-md-8">
-	          <h3>{widget.type.toLowerCase()} widget</h3>
+				<h4 className="widget-title"><b>{lowerCaseAllWordsExceptFirstLetters(widget.type)} widget {checked}</b></h4>
 	        </div>
 	        <div className="col-md-4">
 	          <button className="btn btn-warning"> <i className="fa fa-arrow-down"></i> </button>
@@ -32,21 +38,26 @@ const WidgetComponent = ({widget, updateWidget}) =>
 	        </div>
 		</div>
 	        {
-	        	widget.type=='HEADING' && <HeadingWidget
+	        	widget.type === 'HEADING' && <HeadingWidget
 	        		updateWidget={updateWidget}
-	        		widget={widget}/> ||
-	        	widget.type=='LIST' && <ListWidget
+	        		widget={widget}
+					checked={checked}/> ||
+	        	widget.type ==='LIST' && <ListWidget
 	        		updateWidget={updateWidget}
-	        		widget={widget}/> ||
-	        	widget.type=='PARAGRAPH' && <ParagraphWidget
+	        		widget={widget}
+					checked={checked}/> ||
+	        	widget.type === 'PARAGRAPH' && <ParagraphWidget
 	        		updateWidget = {updateWidget}
-	        		widget ={widget}/> ||
-	        	widget.type=='IMAGE' && <ImageWidget
+	        		widget ={widget}
+					checked={checked}/> ||
+	        	widget.type === 'IMAGE' && <ImageWidget
 	        		updateWidget={updateWidget}
-	        		widget={widget}/> ||
-	        	widget.type=='LINK' && <LinkWidget
+	        		widget={widget}
+					checked={checked}/> ||
+	        	widget.type ==='LINK' && <LinkWidget
 	        		updateWidget={updateWidget}
-	        		widget={widget}/>
+	        		widget={widget}
+					checked ={checked}/>
 	        }
       </div>
 

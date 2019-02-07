@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 
-const HeadingWidget = ({widget, updateWidget}) =>
-			<div className="container">
+const HeadingWidget = ({widget, updateWidget, checked}) =>
+
 
 			    <div className="row">
 			        <div className="col-md-12">
@@ -36,17 +36,23 @@ const HeadingWidget = ({widget, updateWidget}) =>
 			            	placeholder="Widget name"
 			            	/>
 			          </div>
-			          <h4>Preview</h4>
-			          {
-			          	widget.size === 1 && <h1>{widget.text}</h1> ||
-			          	widget.size === 2 && <h2>{widget.text}</h2> ||
-			          	widget.size === 3 && <h3>{widget.text}</h3> ||
-			          	widget.size === 4 && <h4>{widget.text}</h4> ||
-			          	widget.size === 5 && <h5>{widget.text}</h5> 
-			          }
+						<p>{checked}</p>
+						{checked? <h3>Preview</h3>: ''}
+					   {checked ?
+
+
+						   widget.size === 1 && <h1>{widget.text}</h1> ||
+						   widget.size === 2 && <h2>{widget.text}</h2> ||
+						   widget.size === 3 && <h3>{widget.text}</h3> ||
+						   widget.size === 4 && <h4>{widget.text}</h4> ||
+						   widget.size === 5 && <h5>{widget.text}</h5>
+					    :
+						  '' }
+
+
 			        </div>
 			   </div>
-		   </div>
+
 
 		
 	

@@ -29,6 +29,7 @@
                                     {
                                         "id" : "53",
                                         "type": "LIST",
+                                        "option": 1,
                                         "items": "Nodes,Attributes,Tag names,IDs,Styles,Classes"
                                     },
                                     {
@@ -62,6 +63,7 @@
                                     {
                                         "id" : "58",
                                         "type": "LIST",
+                                        "option": 1,
                                         "items": "Nodes,Attributes,Tag names,IDs,Styles,Classes"
                                     },
                                     {
@@ -96,6 +98,7 @@
                                     {
                                         "id" : "504",
                                         "type": "LIST",
+                                        "option": 1,
                                         "items": "Nodes,Attributes,Tag names,IDs,Styles,Classes"
                                     }
 
@@ -124,6 +127,7 @@
                                     {
                                         "id" : "509",
                                         "type": "LIST",
+                                        "option": 1,
                                         "items": "Nodes,Attributes,Tag names,IDs,Styles,Classes"
                                     },
                                     {
@@ -157,6 +161,7 @@
                                     {
                                         "id" : "514",
                                         "type": "LIST",
+                                        "option": 1,
                                         "items": "Nodes,Attributes,Tag names,IDs,Styles,Classes"
                                     },
                                     {
@@ -202,6 +207,7 @@
                                     {
                                         "id" : "519",
                                         "type": "LIST",
+                                        "option": 1,
                                         "items": "Nodes,Attributes,Tag names,IDs,Styles,Classes"
                                     },
                                     {
@@ -236,6 +242,7 @@
                                     {
                                         "id" : "524",
                                         "type": "LIST",
+                                        "option": 1,
                                         "items": "Nodes,Attributes,Tag names,IDs,Styles,Classes"
                                     },
                                     {
@@ -287,6 +294,7 @@
                                     {
                                         "id" : "529",
                                         "type": "LIST",
+                                        "option": 1,
                                         "items": "Nodes,Attributes,Tag names,IDs,Styles,Classes"
                                     }
                                 ]
@@ -309,6 +317,7 @@
                                     {
                                         "id" : "532",
                                         "type": "LIST",
+                                        "option": 1,
                                         "items": "Nodes,Attributes,Tag names,IDs,Styles,Classes"
                                     }
                                 ]
@@ -337,6 +346,7 @@
                                     {
                                         "id" : "535",
                                         "type": "LIST",
+                                        "option": 1,
                                         "items": "Nodes,Attributes,Tag names,IDs,Styles,Classes"
                                     }
                                 ]

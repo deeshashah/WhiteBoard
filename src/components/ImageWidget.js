@@ -1,9 +1,7 @@
 import React from 'react'
 
 
-const ImageWidget = ({widget, updateWidget}) => 
-    <div className="container">
-      
+const ImageWidget = ({widget, updateWidget, checked}) =>
       <div className="row">
         <div className="col-md-12">
           <input 
@@ -18,11 +16,15 @@ const ImageWidget = ({widget, updateWidget}) =>
           <br></br>
           <input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Widget text"/>
           <br></br>
-          <h3>Preview</h3>
-          <img src={widget.src}/>
+            {checked?
+                <div>
+                    <h3>Preview</h3>
+                    <img src={widget.src}/>
+                </div> : ''
+            }
+
           <br></br>
         </div>
       </div>
-    </div>
 
 export default ImageWidget

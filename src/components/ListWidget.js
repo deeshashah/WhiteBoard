@@ -1,7 +1,7 @@
 import React from 'react'
 
-const ListWidget = ({widget, updateWidget}) => 
-		<div className="container">
+const ListWidget = ({widget, updateWidget, checked}) =>
+
 	      <div className="row">
 	        <div className="col-md-12">
 	          <div className="form-group">
@@ -30,9 +30,12 @@ const ListWidget = ({widget, updateWidget}) =>
 	          	type="text" 
 	          	className="form-control" 
 	          	placeholder="Widget name"/>
-	          
-	          <h3>Preview</h3>
-	          {
+
+				{
+					checked? <h3>Preview</h3>: ''
+				}
+
+	          { checked?
 	          	widget.option===1 && <ol>
 		          {   		
 		          	widget.items.split(",").map(item => 
@@ -47,11 +50,11 @@ const ListWidget = ({widget, updateWidget}) =>
 		          		<li>{item}</li>
 		          	)	          	
 		          }
-		          </ul>
+		          </ul>:''
 	          }
 	          
 	        </div>
 		    </div>
-	    </div>
+
 
 export default ListWidget

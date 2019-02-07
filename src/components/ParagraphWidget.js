@@ -1,7 +1,6 @@
 import React from 'react'
 
-const ParagraphWidget = ({widget, updateWidget}) => 
-    <div className="container">
+const ParagraphWidget = ({widget, updateWidget, checked}) =>
         <div className="row">
           <div className="col-md-12">
             <div className="form-group">
@@ -18,10 +17,13 @@ const ParagraphWidget = ({widget, updateWidget}) =>
             <br></br>
             <input className="form-control" placeholder="Widget name"/>
             <br></br>
-            <h3>Preview</h3>
-            <p>{widget.text}</p>
+              {checked? <div><h3>Preview</h3>
+                  <p>{widget.text}</p></div> : ''
+
+              }
+
           </div>
         </div>
-    </div>
+
 
 export default ParagraphWidget

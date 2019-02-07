@@ -1,7 +1,7 @@
 import React from 'react'
 
 const LinkWidget = ({widget, updateWidget}) =>
-			<div className="container widget">
+
         <div className="row">
           <div className="col-md-12">
             <input 
@@ -36,7 +36,7 @@ const LinkWidget = ({widget, updateWidget}) =>
             <br></br>
           </div>
         </div>
-    </div>
+
 
 
 
