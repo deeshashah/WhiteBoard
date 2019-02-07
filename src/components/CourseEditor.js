@@ -28,7 +28,8 @@ class CourseEditor extends Component{
 			changeLesson : {title:'', topics:[]},
 			selectedTopic : this.course.modules[0].lessons[0].topics[0],
 			changeTopic: {title: ''},
-			widgets: this.course.modules[0].lessons[0].topics[0].widgets
+			widgets: this.course.modules[0].lessons[0].topics[0].widgets,
+
 		}
 
 

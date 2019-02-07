@@ -2,7 +2,7 @@ import React from 'react'
 import {connect} from 'react-redux'
 import Widgets from '../components/Widgets'
 
-const stateToPropertyMapper = (state, ownProps) =>({
+const stateToPropertyMapper = (state) =>({
 	widgets:state.widgets,
 	checked : state.checked,
 	loadWidget:state.loadWidget

@@ -1,22 +1,19 @@
-
-function toggle (state) {
-    var newState = Object.assign({}, state);
-
-    newState.checked = !newState.checked;
-    return newState;
-}
-
 const widgetReducer = (state = {widgets:[], checked: true, loadWidget:true}, action) => {
     switch(action.type){
         case 'DELETE_WIDGET':
-            console.log(state.widgets.filter(widget => widget.id !== action.widget.id));
+            const newWidgets = []
+            for(var i=0; i<state.widgets.length; i++){
+                if(state.widgets[i].id === action.widget.id){
+                    delete state.widgets[i];
+                }
+            }
             return{
-                widgets:state.widgets.filter(widget => widget.id !== action.widget.id),
+                widgets:state.widgets,
                 checked: state.checked,
                 loadWidget: false
             };
         case 'LOAD_WIDGETS':
-            state.widgets = action.widgets;
+
             return{
                 widgets:action.widgets,
                 checked: state.checked,
@@ -41,6 +38,11 @@ const widgetReducer = (state = {widgets:[], checked: true, loadWidget:true}, act
                 loadWidget: false
             };
         case 'ADD_WIDGET':
+            state.widgets.push({
+                type: 'HEADING',
+                text: 'New Widget',
+                size: 1
+            });
             return {
                 widgets: [
                     ...state.widgets,

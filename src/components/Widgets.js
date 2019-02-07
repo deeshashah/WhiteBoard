@@ -1,22 +1,8 @@
 import React, {Component} from 'react'
-import HeadingWidget from './HeadingWidget'
-import ListWidget from './ListWidget'
-import ParagraphWidget from './ParagraphWidget'
-import ImageWidget from './ImageWidget'
-import LinkWidget from './LinkWidget'
 import WidgetComponent from './WidgetComponent'
 
-const preview = () => {
-	var p = document.getElementById("switch-id");
-	console.log("preview"+p);
-	// return p.checked
-}
-
 const Widgets = ({widgets, updateWidget, loadWidgets, checked, togglePreview, deleteWidget, loadWidget, addWidget}) =>{
-		if(loadWidget){
-			loadWidgets();
-		}
-
+		loadWidgets();
 		return(<div>
 
 			<h3>Widgets : {widgets.length} {checked}</h3>
@@ -42,7 +28,6 @@ const Widgets = ({widgets, updateWidget, loadWidgets, checked, togglePreview, de
 			{
 				widgets.map(widget =>
 					<WidgetComponent
-						key={widget.id}
 						widget={widget}
 						updateWidget={updateWidget}
 						checked={checked}
