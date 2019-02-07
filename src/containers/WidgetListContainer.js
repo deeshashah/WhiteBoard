@@ -5,6 +5,7 @@ import Widgets from '../components/Widgets'
 const stateToPropertyMapper = (state, ownProps) =>({
 	widgets:state.widgets,
 	checked : state.checked,
+	loadWidget:state.loadWidget
 });
 
 
@@ -23,6 +24,18 @@ const dispatchToPropertyMatcher = (dispatch, ownProps) => ({
 	togglePreview: () =>
 		dispatch({
 			type:'TOGGLE_PREVIEW',
+		}),
+
+	deleteWidget: (widget) =>
+		dispatch({
+			type:'DELETE_WIDGET',
+			widget: widget
+		}),
+
+	addWidget : () =>
+		dispatch({
+			type: 'ADD_WIDGET',
+
 		})
 
 });

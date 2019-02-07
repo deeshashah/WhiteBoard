@@ -11,7 +11,7 @@ function lowerCaseAllWordsExceptFirstLetters(string) {
 	});
 }
 
-const WidgetComponent = ({widget, updateWidget, checked}) =>
+const WidgetComponent = ({widget, updateWidget, checked, deleteWidget}) =>
 	<div className="container widget">
 		<div className="row">
 	        <div className="col-md-8">
@@ -34,7 +34,7 @@ const WidgetComponent = ({widget, updateWidget, checked}) =>
 	            <option value="IMAGE">Image</option>
 	            <option value="LINK">Link</option>
 	          </select>
-	          <button className="btn btn-danger"> <i className="fa fa-close"></i> </button>
+	          <button className="btn btn-danger" onClick={()=> deleteWidget(widget)}> <i className="fa fa-close"></i> </button>
 	        </div>
 		</div>
 	        {

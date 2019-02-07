@@ -12,9 +12,11 @@ const preview = () => {
 	// return p.checked
 }
 
-const Widgets = ({widgets, updateWidget, loadWidgets, checked, togglePreview}) =>{
-		loadWidgets();
-		console.log({checked});
+const Widgets = ({widgets, updateWidget, loadWidgets, checked, togglePreview, deleteWidget, loadWidget, addWidget}) =>{
+		if(loadWidget){
+			loadWidgets();
+		}
+
 		return(<div>
 
 			<h3>Widgets : {widgets.length} {checked}</h3>
@@ -44,11 +46,13 @@ const Widgets = ({widgets, updateWidget, loadWidgets, checked, togglePreview}) =
 						widget={widget}
 						updateWidget={updateWidget}
 						checked={checked}
+						deleteWidget={deleteWidget}
 					/>
 
 				)
 			}
 			</div>
+			<button className="btn btn-danger" onClick={addWidget}>Add</button>
 		</div>)
 
 }
