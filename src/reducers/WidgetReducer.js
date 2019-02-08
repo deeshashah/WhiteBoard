@@ -20,9 +20,9 @@ const widgetReducer = (state = {widgets:[], checked: true, loadWidget:true}, act
 
             };
           case 'UPDATE_WIDGET':
+            state.widgets = courseService.updateWidget(action.widget.id, action.widget);
             return{
-              widgets: state.widgets.map(widget =>
-                widget.id === action.widget.id ? action.widget : widget),
+              widgets: state.widgets,
                 checked:state.checked,
                 loadWidget: false
 

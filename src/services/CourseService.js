@@ -183,22 +183,28 @@ class CourseService{
 		}
 	};
 
-	updateWidget = (widgetId, widget) => {
-		for(var i=0; i<this.courses.length; i++){
-			var lessons = this.courses[i].lessons;
-			for(var j=0; j<lessons.length;j++){
-				var topics = lessons[j].topics;
-				for(var k=0; k<topics.length;k++){
-					var widgets = topics[k].widgets;
-					for(var w=0; w<widgets.length; w++){
-						if(widgets[w].id === widgetId){
-							widgets[w] = widget;
-						}
-					}
-				}
-			}
-		}
-	};
+    updateWidget = (widgetId, widget) => {
+        for(var i=0; i<this.courses.length; i++){
+            var modules = this.courses[i].modules;
+            for(var j=0; j<modules.length;j++){
+                var lessons = modules[j].lessons;
+                for(var k=0; k<lessons.length;k++){
+                    var topics = lessons[k].topics;
+                    for(var l=0; l<topics.length; l++){
+                        var widgets = topics[l].widgets
+                        for(var m=0; m<widgets.length; m++){
+                            if(widgets[m].id===widgetId){
+                                widgets = widgets.map(widget =>
+                                    widget.id === widgetId ? widget : widget)
+                                return widgets;
+                            }
+                        }
+                    }
+
+                }
+            }
+        }
+    };
 
     deleteWidget = (widgetId) => {
         for(var i=0; i<this.courses.length; i++){
