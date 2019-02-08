@@ -227,6 +227,55 @@ class CourseService{
             }
         }
     };
+
+    positionDown = (widgetId) => {
+		for(var i=0; i<this.courses.length; i++){
+			var modules = this.courses[i].modules;
+			for(var j=0; j<modules.length;j++){
+				var lessons = modules[j].lessons;
+				for(var k=0; k<lessons.length;k++){
+					var topics = lessons[k].topics;
+					for(var l=0; l<topics.length; l++){
+						var widgets = topics[l].widgets
+						for(var m=0; m<widgets.length; m++){
+							if(widgets[m].id===widgetId){
+								var w = widgets[m];
+								widgets.splice(m, 1);
+								widgets.push(w);
+								return widgets;
+							}
+						}
+					}
+
+				}
+			}
+		}
+	}
+
+	positionUp = (widgetId) => {
+		for(var i=0; i<this.courses.length; i++){
+			var modules = this.courses[i].modules;
+			for(var j=0; j<modules.length;j++){
+				var lessons = modules[j].lessons;
+				for(var k=0; k<lessons.length;k++){
+					var topics = lessons[k].topics;
+					for(var l=0; l<topics.length; l++){
+						var widgets = topics[l].widgets
+						for(var m=0; m<widgets.length; m++){
+							if(widgets[m].id===widgetId){
+								var w = widgets[m];
+								widgets.splice(m, 1);
+								widgets.unshift(w);
+								console.log(widgets);
+								return widgets;
+							}
+						}
+					}
+
+				}
+			}
+		}
+	}
 }
 
 export default CourseService

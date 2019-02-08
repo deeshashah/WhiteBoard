@@ -37,6 +37,18 @@ const dispatchToPropertyMatcher = (dispatch, ownProps) => ({
 			type: 'CREATE_WIDGET',
 			topicId: ownProps.topic.id
 
+		}),
+
+	changePositionDown : (widget) =>
+		dispatch({
+			type:'POSITION_DOWN',
+			widget: widget
+		}),
+
+	changePositionUp : (widget) =>
+		dispatch({
+			type:'POSITION_UP',
+			widget: widget
 		})
 
 });

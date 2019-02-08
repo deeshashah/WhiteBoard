@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import WidgetComponent from './WidgetComponent'
 
-const Widgets = ({widgets, updateWidget, loadWidgets, checked, togglePreview, deleteWidget, loadWidget, addWidget}) =>{
+const Widgets = ({widgets, updateWidget, loadWidgets, checked, togglePreview, deleteWidget, addWidget, changePositionDown, changePositionUp}) =>{
 		loadWidgets();
 		return(<div>
 
@@ -32,6 +32,8 @@ const Widgets = ({widgets, updateWidget, loadWidgets, checked, togglePreview, de
 						updateWidget={updateWidget}
 						checked={checked}
 						deleteWidget={deleteWidget}
+						changePositionDown={changePositionDown}
+						changePositionUp={changePositionUp}
 					/>
 
 				)

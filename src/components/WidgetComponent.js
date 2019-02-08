@@ -11,16 +11,16 @@ function lowerCaseAllWordsExceptFirstLetters(string) {
 	});
 }
 
-const WidgetComponent = ({widget, updateWidget, checked, deleteWidget}) =>
+const WidgetComponent = ({widget, updateWidget, checked, deleteWidget, changePositionDown, changePositionUp}) =>
 	<div className="container widget">
 		<div className="row">
 	        <div className="col-md-8">
 				<h4 className="widget-title"><b>{lowerCaseAllWordsExceptFirstLetters(widget.type)} widget {checked}</b></h4>
 	        </div>
 	        <div className="col-md-4">
-	          <button className="btn btn-warning"> <i className="fa fa-arrow-down"></i> </button>
-	          <button className="btn btn-warning"> <i className="fa fa-arrow-up"></i> </button>
-	          <select
+	            <button className="btn btn-warning" onClick={() => changePositionUp(widget)}> <i className="fa fa-arrow-up"></i> </button>
+				<button className="btn btn-warning"  onClick={()=>changePositionDown(widget)}> <i className="fa fa-arrow-down"></i> </button>
+				<select
 				  onChange={(event)=>{
 					  widget.type = event.target.value
 					  updateWidget(widget)

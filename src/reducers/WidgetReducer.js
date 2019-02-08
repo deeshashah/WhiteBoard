@@ -41,8 +41,23 @@ const widgetReducer = (state = {widgets:[], checked: true, loadWidget:true}, act
                 text: 'New Widget',
                 size: 1
             });
-
             return {
+                widgets: state.widgets,
+                checked: state.checked,
+                loadWidget:false
+            };
+        case 'POSITION_DOWN':
+            state.widgets = courseService.positionDown(action.widget.id);
+            return{
+                widgets: state.widgets,
+                checked: state.checked,
+                loadWidget:false
+            };
+
+        case 'POSITION_UP':
+            console.log("here");
+            state.widgets =courseService.positionUp(action.widget.id);
+            return{
                 widgets: state.widgets,
                 checked: state.checked,
                 loadWidget:false
