@@ -17,28 +17,33 @@
                                 "widgets": [
                                     {
                                         "id" : "51",
+                                        "name" : "Heading",
                                         "type": "HEADING",
                                         "size": 1,
                                         "text": "The Document Object Model"
                                     },
                                     {
                                         "id" : "52",
+                                        "name" : "Paragraph",
                                         "type": "PARAGRAPH",
                                         "text": "This topic introduces the DOM"
                                     },
                                     {
                                         "id" : "53",
+                                        "name": "List",
                                         "type": "LIST",
                                         "option": 1,
                                         "items": "Nodes,Attributes,Tag names,IDs,Styles,Classes"
                                     },
                                     {
                                         "id" : "54",
+                                        "name": "Image",
                                         "type": "IMAGE",
                                         "src": "https://picsum.photos/200"
                                     },
                                     {
                                         "id" : "55",
+                                        "name": "link",
                                         "type": "LINK",
                                         "title": "The DOM",
                                         "href": "https://en.wikipedia.org/wiki/Document_Object_Model"
@@ -51,28 +56,33 @@
                                 "widgets": [
                                     {
                                         "id" : "56",
+                                        "name": "heading",
                                         "type": "HEADING",
                                         "size": 1,
                                         "text": "Tags in HTML"
                                     },
                                     {
                                         "id" : "57",
+                                        "name": "paragraph",
                                         "type": "PARAGRAPH",
                                         "text": "This topic introduces tags in HTML"
                                     },
                                     {
                                         "id" : "58",
+                                        "name": "list",
                                         "type": "LIST",
                                         "option": 1,
                                         "items": "Nodes,Attributes,Tag names,IDs,Styles,Classes"
                                     },
                                     {
                                         "id" : "59",
+                                        "name": "image",
                                         "type": "IMAGE",
                                         "src": "https://picsum.photos/200"
                                     },
                                     {
                                         "id" : "501",
+                                        "name": "link",
                                         "type": "LINK",
                                         "title": "The DOM",
                                         "href": "https://en.wikipedia.org/wiki/Document_Object_Model"
@@ -86,17 +96,20 @@
                                 "widgets": [
                                     {
                                         "id" : "502",
+                                        "name": "heading",
                                         "type": "HEADING",
                                         "size": 1,
                                         "text": "Attributes in HTML"
                                     },
                                     {
                                         "id" : "503",
+                                        "name": "paragraph",
                                         "type": "PARAGRAPH",
                                         "text": "This topic introduces attributes in HTML"
                                     },
                                     {
                                         "id" : "504",
+                                        "name": "list",
                                         "type": "LIST",
                                         "option": 1,
                                         "items": "href, src, width, height"
@@ -115,28 +128,33 @@
                                 "widgets": [
                                     {
                                         "id" : "507",
+                                        "name": "heading",
                                         "type": "HEADING",
                                         "size": 1,
                                         "text": "Borders in CSS"
                                     },
                                     {
                                         "id" : "508",
+                                        "name": "paragraph",
                                         "type": "PARAGRAPH",
                                         "text": "This topic introduces borders in CSS"
                                     },
                                     {
                                         "id" : "509",
+                                        "name": "list",
                                         "type": "LIST",
                                         "option": 1,
                                         "items": "border-width, border-height, border-color"
                                     },
                                     {
                                         "id" : "510",
+                                        "name": "image",
                                         "type": "IMAGE",
                                         "src": "https://picsum.photos/200"
                                     },
                                     {
                                         "id" : "511",
+                                        "name": "link",
                                         "type": "LINK",
                                         "title": "W3 schools borders",
                                         "href": "https://www.w3schools.com/css/css_border.asp"
@@ -149,23 +167,27 @@
                                 "widgets": [
                                     {
                                         "id" : "512",
+                                        "name": "heading",
                                         "type": "HEADING",
                                         "size": 1,
                                         "text": "Fonts in CSS"
                                     },
                                     {
                                         "id" : "513",
+                                        "name": "paragraph",
                                         "type": "PARAGRAPH",
                                         "text": "This topic introduces how to add fonts in CSS"
                                     },
                                     {
                                         "id" : "514",
+                                        "name": "image",
                                         "type": "LIST",
                                         "option": 1,
                                         "items": "Nodes,Attributes,Tag names,IDs,Styles,Classes"
                                     },
                                     {
                                         "id" : "515",
+                                        "name": "image",
                                         "type": "IMAGE",
                                         "src": "https://picsum.photos/200"
                                     }
@@ -189,28 +211,33 @@
                                 "widgets": [
                                     {
                                         "id" : "517",
+                                        "name": "heading",
                                         "type": "HEADING",
                                         "size": 1,
                                         "text": "Variables"
                                     },
                                     {
                                         "id" : "518",
+                                        "name": "paragraph",
                                         "type": "PARAGRAPH",
                                         "text": "This topic introduces variables in Javascript"
                                     },
                                     {
                                         "id" : "519",
+                                        "name": "list",
                                         "type": "LIST",
                                         "option": 1,
                                         "items": "global variables, local variables"
                                     },
                                     {
                                         "id" : "520",
+                                        "name": "image",
                                         "type": "IMAGE",
                                         "src": "https://picsum.photos/200"
                                     },
                                     {
                                         "id" : "521",
+                                        "name": "link",
                                         "type": "LINK",
                                         "title": "JS Variables",
                                         "href": "https://www.w3schools.com/js/js_variables.asp"
@@ -224,17 +251,20 @@
                                 "widgets" : [
                                     {
                                         "id" : "522",
+                                        "name": "heading",
                                         "type": "HEADING",
                                         "size": 1,
                                         "text": "Data types"
                                     },
                                     {
                                         "id" : "523",
+                                        "name": "paragraph",
                                         "type": "PARAGRAPH",
                                         "text": "This topic introduces Data types in javascript"
                                     },
                                     {
                                         "id" : "525",
+                                        "name": "image",
                                         "type": "IMAGE",
                                         "src": "https://picsum.photos/200"
                                     }
@@ -264,17 +294,20 @@
                                 "widgets" : [
                                     {
                                         "id" : "527",
+                                        "name": "heading",
                                         "type": "HEADING",
                                         "size": 1,
                                         "text": "SELECT Statement"
                                     },
                                     {
                                         "id" : "528",
+                                        "name": "paragraph",
                                         "type": "PARAGRAPH",
                                         "text": "This topic introduces Select query in SQL"
                                     },
                                     {
                                         "id" : "529",
+                                        "name": "list",
                                         "type": "LIST",
                                         "option": 1,
                                         "items": "select all, select some"
@@ -287,12 +320,14 @@
                                 "widgets" : [
                                     {
                                         "id" : "530",
+                                        "name": "heading",
                                         "type": "HEADING",
                                         "size": 1,
                                         "text": "UPDATE"
                                     },
                                     {
                                         "id" : "531",
+                                        "name": "paragraph",
                                         "type": "PARAGRAPH",
                                         "text": "This topic introduces Update in SQL"
                                     }
@@ -310,17 +345,20 @@
                                 "widgets" : [
                                     {
                                         "id" : "533",
+                                        "name": "heading",
                                         "type": "HEADING",
                                         "size": 1,
                                         "text": "Inner Join"
                                     },
                                     {
                                         "id" : "534",
+                                        "name": "paragraph",
                                         "type": "PARAGRAPH",
                                         "text": "This topic introduces inner-join in javascript"
                                     },
                                     {
                                         "id" : "54",
+                                        "name": "image",
                                         "type": "IMAGE",
                                         "src": "https://picsum.photos/200"
                                     }

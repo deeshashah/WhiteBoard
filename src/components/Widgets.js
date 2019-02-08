@@ -29,6 +29,7 @@ const Widgets = ({widgets, updateWidget, loadWidgets, checked, togglePreview, de
 				widgets.map(widget =>
 					<WidgetComponent
 						widget={widget}
+						name={widget.name}
 						updateWidget={updateWidget}
 						checked={checked}
 						deleteWidget={deleteWidget}
