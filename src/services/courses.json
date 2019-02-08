@@ -88,18 +88,18 @@
                                         "id" : "502",
                                         "type": "HEADING",
                                         "size": 1,
-                                        "text": "The Document Object Model"
+                                        "text": "Attributes in HTML"
                                     },
                                     {
                                         "id" : "503",
                                         "type": "PARAGRAPH",
-                                        "text": "This topic introduces the DOM"
+                                        "text": "This topic introduces attributes in HTML"
                                     },
                                     {
                                         "id" : "504",
                                         "type": "LIST",
                                         "option": 1,
-                                        "items": "Nodes,Attributes,Tag names,IDs,Styles,Classes"
+                                        "items": "href, src, width, height"
                                     }
 
                                 ]
@@ -128,7 +128,7 @@
                                         "id" : "509",
                                         "type": "LIST",
                                         "option": 1,
-                                        "items": "Nodes,Attributes,Tag names,IDs,Styles,Classes"
+                                        "items": "border-width, border-height, border-color"
                                     },
                                     {
                                         "id" : "510",
@@ -138,8 +138,8 @@
                                     {
                                         "id" : "511",
                                         "type": "LINK",
-                                        "title": "The DOM",
-                                        "href": "https://en.wikipedia.org/wiki/Document_Object_Model"
+                                        "title": "W3 schools borders",
+                                        "href": "https://www.w3schools.com/css/css_border.asp"
                                     }
                                 ]
                             },
@@ -168,12 +168,6 @@
                                         "id" : "515",
                                         "type": "IMAGE",
                                         "src": "https://picsum.photos/200"
-                                    },
-                                    {
-                                        "id" : "516",
-                                        "type": "LINK",
-                                        "title": "The DOM",
-                                        "href": "https://en.wikipedia.org/wiki/Document_Object_Model"
                                     }
                                 ]
                             }
@@ -208,7 +202,7 @@
                                         "id" : "519",
                                         "type": "LIST",
                                         "option": 1,
-                                        "items": "Nodes,Attributes,Tag names,IDs,Styles,Classes"
+                                        "items": "global variables, local variables"
                                     },
                                     {
                                         "id" : "520",
@@ -218,8 +212,8 @@
                                     {
                                         "id" : "521",
                                         "type": "LINK",
-                                        "title": "The DOM",
-                                        "href": "https://en.wikipedia.org/wiki/Document_Object_Model"
+                                        "title": "JS Variables",
+                                        "href": "https://www.w3schools.com/js/js_variables.asp"
                                     }
                                 ]
 
@@ -240,21 +234,9 @@
                                         "text": "This topic introduces Data types in javascript"
                                     },
                                     {
-                                        "id" : "524",
-                                        "type": "LIST",
-                                        "option": 1,
-                                        "items": "Nodes,Attributes,Tag names,IDs,Styles,Classes"
-                                    },
-                                    {
                                         "id" : "525",
                                         "type": "IMAGE",
                                         "src": "https://picsum.photos/200"
-                                    },
-                                    {
-                                        "id" : "526",
-                                        "type": "LINK",
-                                        "title": "The DOM",
-                                        "href": "https://en.wikipedia.org/wiki/Document_Object_Model"
                                     }
                                 ]
                             }
@@ -284,18 +266,18 @@
                                         "id" : "527",
                                         "type": "HEADING",
                                         "size": 1,
-                                        "text": "Data types"
+                                        "text": "SELECT Statement"
                                     },
                                     {
                                         "id" : "528",
                                         "type": "PARAGRAPH",
-                                        "text": "This topic introduces Data types in javascript"
+                                        "text": "This topic introduces Select query in SQL"
                                     },
                                     {
                                         "id" : "529",
                                         "type": "LIST",
                                         "option": 1,
-                                        "items": "Nodes,Attributes,Tag names,IDs,Styles,Classes"
+                                        "items": "select all, select some"
                                     }
                                 ]
                             },
@@ -307,18 +289,12 @@
                                         "id" : "530",
                                         "type": "HEADING",
                                         "size": 1,
-                                        "text": "Data types"
+                                        "text": "UPDATE"
                                     },
                                     {
                                         "id" : "531",
                                         "type": "PARAGRAPH",
-                                        "text": "This topic introduces Data types in javascript"
-                                    },
-                                    {
-                                        "id" : "532",
-                                        "type": "LIST",
-                                        "option": 1,
-                                        "items": "Nodes,Attributes,Tag names,IDs,Styles,Classes"
+                                        "text": "This topic introduces Update in SQL"
                                     }
                                 ]
                             }
@@ -336,18 +312,17 @@
                                         "id" : "533",
                                         "type": "HEADING",
                                         "size": 1,
-                                        "text": "Data types"
+                                        "text": "Inner Join"
                                     },
                                     {
                                         "id" : "534",
                                         "type": "PARAGRAPH",
-                                        "text": "This topic introduces Data types in javascript"
+                                        "text": "This topic introduces inner-join in javascript"
                                     },
                                     {
-                                        "id" : "535",
-                                        "type": "LIST",
-                                        "option": 1,
-                                        "items": "Nodes,Attributes,Tag names,IDs,Styles,Classes"
+                                        "id" : "54",
+                                        "type": "IMAGE",
+                                        "src": "https://picsum.photos/200"
                                     }
                                 ]
                             }
