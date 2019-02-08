@@ -1,3 +1,6 @@
+import CourseService from "../services/CourseService"
+var courseService = new CourseService()
+
 const widgetReducer = (state = {widgets:[], checked: true, loadWidget:true}, action) => {
     switch(action.type){
         case 'DELETE_WIDGET':
@@ -38,20 +41,14 @@ const widgetReducer = (state = {widgets:[], checked: true, loadWidget:true}, act
                 loadWidget: false
             };
         case 'ADD_WIDGET':
-            state.widgets.push({
+            state.widgets = courseService.createWidget(action.topicId, {
                 type: 'HEADING',
                 text: 'New Widget',
                 size: 1
             });
+
             return {
-                widgets: [
-                    ...state.widgets,
-                    {
-                        type: 'HEADING',
-                        text: 'New Widget',
-                        size: 1
-                    }
-                ],
+                widgets: state.widgets,
                 checked: state.checked,
                 loadWidget:false
             };

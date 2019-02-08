@@ -35,6 +35,7 @@ const dispatchToPropertyMatcher = (dispatch, ownProps) => ({
 	addWidget : () =>
 		dispatch({
 			type: 'ADD_WIDGET',
+			topicId: ownProps.topic.id
 
 		})
 

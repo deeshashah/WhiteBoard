@@ -239,7 +239,8 @@ class CourseEditor extends Component{
 	                	updateTopic={this.updateTopic}
 	                />
 	                <Provider store={store}>
-						<WidgetListContainer widgets={this.state.widgets}/>
+						<WidgetListContainer widgets={this.state.widgets}
+                        topic={this.state.selectedTopic}/>
 					</Provider>
 	                <br></br>
 

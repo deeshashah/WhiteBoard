@@ -130,17 +130,22 @@ class CourseService{
 	};
 
 	createWidget = (topicId, widget) => {
-		for(var i=0; i<this.courses.length; i++){
-			var lessons = this.courses[i].lessons;
-			for(var j=0; j<lessons.length;j++){
-				var topics = lessons[j].topics;
-				for(var k=0; k<topics.length;k++){
-					if(topics[k].id === topicId){
-						topics[k].widgets.push(widget);
-					}
-				}
-			}
-		}
+        for(var i=0; i<this.courses.length; i++){
+            var modules = this.courses[i].modules;
+            for(var j=0; j<modules.length;j++){
+                var lessons = modules[j].lessons;
+                for(var k=0; k<lessons.length;k++){
+                    var topics = lessons[k].topics;
+                    for(var l=0; l<topics.length; l++){
+                        if(topics[l].id === topicId){
+                            topics[l].widgets.push(widget);
+                            return topics[l].widgets;
+                        }
+                    }
+
+                }
+            }
+        }
 	};
 
 	findWidgets = (topicId) => {
