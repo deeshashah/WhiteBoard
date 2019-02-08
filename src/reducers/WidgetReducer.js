@@ -12,7 +12,6 @@ const widgetReducer = (state = {widgets:[], checked: true, loadWidget:true}, act
                 loadWidget: false
             };
         case 'LOAD_WIDGETS':
-
             return{
                 widgets:action.widgets,
                 checked: state.checked,

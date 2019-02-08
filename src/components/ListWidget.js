@@ -11,7 +11,7 @@ const ListWidget = ({widget, updateWidget, checked}) =>
 							className="form-control"
 							value={widget.items}
 							onChange={event => {
-								widget.text = event.target.value
+								widget.items = event.target.value
 								updateWidget(widget)
 							}}
 						>
@@ -40,7 +40,7 @@ const ListWidget = ({widget, updateWidget, checked}) =>
 	          {
 	          	widget.option===1 && <ol>
 		          {   		
-		          	widget.items.split(",").map(item => 
+		          	widget.items.replace(/\n/g, ",").split(",").map(item =>
 		          		<li>{item}</li>
 		          	)	          	
 		          }
@@ -48,7 +48,7 @@ const ListWidget = ({widget, updateWidget, checked}) =>
 
 		        widget.option===2 && <ul>
 		          {   		
-		          	widget.items.split(",").map(item => 
+		          	widget.items.replace(/\n/g, ",").split(",").map(item =>
 		          		<li>{item}</li>
 		          	)	          	
 		          }
