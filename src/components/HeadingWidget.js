@@ -1,8 +1,6 @@
 import React, {Component} from 'react'
 
 const HeadingWidget = ({widget, updateWidget, checked}) =>
-
-
 			    <div className="row">
 			        <div className="col-md-12">
 						{
@@ -26,8 +24,6 @@ const HeadingWidget = ({widget, updateWidget, checked}) =>
 										<option value="1">Heading 1</option>
 										<option value="2">Heading 2</option>
 										<option value="3">Heading 3</option>
-										<option value="4">Heading 4</option>
-										<option value="5">Heading 5</option>
 									</select>
 								</div>
 								<input type="text"
@@ -44,9 +40,7 @@ const HeadingWidget = ({widget, updateWidget, checked}) =>
 			          {
 			          	widget.size === 1 && <h1>{widget.text}</h1> ||
 			          	widget.size === 2 && <h2>{widget.text}</h2> ||
-			          	widget.size === 3 && <h3>{widget.text}</h3> ||
-			          	widget.size === 4 && <h4>{widget.text}</h4> ||
-			          	widget.size === 5 && <h5>{widget.text}</h5>
+			          	widget.size === 3 && <h3>{widget.text}</h3>
 			          }
 			        </div>
 			   </div>

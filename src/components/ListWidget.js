@@ -10,6 +10,7 @@ const ListWidget = ({widget, updateWidget, checked}) =>
 						<textarea
 							className="form-control"
 							value={widget.items}
+							placeholder="Enter one list item per line."
 							onChange={event => {
 								widget.items = event.target.value
 								updateWidget(widget)
@@ -24,35 +25,35 @@ const ListWidget = ({widget, updateWidget, checked}) =>
 												widget.option = parseInt(event.target.value)
 												updateWidget(widget)
 											}}>
-										<option value="1">Ordered List</option>
-										<option value="2">Unordered List</option>
+										<option value="1">Unordered List</option>
+										<option value="2">Ordered List</option>
 									</select>
 								</div>
 								<input
 									type="text"
 									className="form-control"
-									placeholder="Widget name"/>
+									placeholder="Widget name"/><br></br>
 							</div>:''
 				}
 
 
 	          <h3>Preview</h3>
 	          {
-	          	widget.option===1 && <ol>
+	          	widget.option===1 && <ul>
 		          {   		
 		          	widget.items.replace(/\n/g, ",").split(",").map(item =>
 		          		<li>{item}</li>
 		          	)	          	
 		          }
-		          </ol> ||
+		          </ul> ||
 
-		        widget.option===2 && <ul>
+		        widget.option===2 && <ol>
 		          {   		
 		          	widget.items.replace(/\n/g, ",").split(",").map(item =>
 		          		<li>{item}</li>
 		          	)	          	
 		          }
-		          </ul>
+		          </ol>
 	          }
 	          
 	        </div>

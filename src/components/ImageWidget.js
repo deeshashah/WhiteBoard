@@ -15,7 +15,7 @@ const ImageWidget = ({widget, updateWidget, checked}) =>
                             updateWidget(widget)
                         }}/>
                     <br></br>
-                    <input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Widget text"/>
+                    <input type="text" className="form-control"aria-describedby="emailHelp" placeholder="Widget name"/>
                     <br></br>
                 </div>:''
             }
