@@ -32,11 +32,12 @@ const HeadingWidget = ({widget, updateWidget, checked}) =>
 									   aria-describedby="emailHelp"
 									   placeholder="Widget name"
 								/>
+								<h4>Preview</h4>
 							</div> : ''
 						}
 
 
-			          <h4>Preview</h4>
+
 			          {
 			          	widget.size === 1 && <h1>{widget.text}</h1> ||
 			          	widget.size === 2 && <h2>{widget.text}</h2> ||
