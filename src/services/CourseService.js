@@ -124,6 +124,8 @@ class CourseService{
 					var topics = lessons[k].topics;
 					for(var l=0; l<topics.length; l++){
 						if(topics[l].id === topicId){
+							topics[l].widgets[0].top = true;
+							topics[l].widgets[topics[l].widgets.length-1].down = true;
 							return topics[l].widgets;
 						}
 					}

@@ -19,7 +19,7 @@ const dispatchToPropertyMatcher = (dispatch, ownProps) => ({
 	loadWidgets : () =>
 		dispatch({
 			type:'LOAD_WIDGETS',
-			widgets : ownProps.widgets,
+			topicId : ownProps.topic.id,
 		}),
 	togglePreview: () =>
 		dispatch({

@@ -12,8 +12,9 @@ const widgetReducer = (state = {widgets:[], checked: true, loadWidget:true}, act
                 loadWidget: false
             };
         case 'LOAD_WIDGETS':
+            state.widgets = courseService.findWidgets(action.topicId);
             return{
-                widgets:action.widgets,
+                widgets:state.widgets,
                 checked: state.checked,
                 loadWidget: true,
 

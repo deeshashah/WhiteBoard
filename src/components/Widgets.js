@@ -5,10 +5,11 @@ const Widgets = ({widgets, updateWidget, loadWidgets, checked, togglePreview, de
 		loadWidgets();
 		return(<div>
 
-			<h3>Widgets : {widgets.length} {checked}</h3>
+
 			<div className="container">
 				<div className="row">
 					<div className="col-md-10">
+						<h5><small>There are {widgets.length} widgets for this topic. {checked}</small></h5>
 					</div>
 					<div className="col-md-1">
 						<button className="btn btn-success">Save</button>
