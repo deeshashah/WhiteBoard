@@ -185,6 +185,7 @@ class CourseService{
                         for(var m=0; m<widgets.length; m++){
                             if(widgets[m].id===widgetId){
                                 widgets.splice(m, 1);
+
                                 return widgets;
                             }
                         }
@@ -209,6 +210,21 @@ class CourseService{
 								var w = widgets[m];
 								widgets.splice(m, 1);
 								widgets.push(w);
+								for(var n=0;n<widgets.length;n++){
+									widgets[n].top = false;
+									widgets[n].down = false;
+									if(n==0){
+										widgets[n].top = true;
+										widgets[n].down = false;
+
+									}
+
+									if(n==widgets.length-1){
+										widgets[n].top=false
+										widgets[n].down=true
+									}
+								}
+								console.log(widgets);
 								return widgets;
 							}
 						}
@@ -233,6 +249,20 @@ class CourseService{
 								var w = widgets[m];
 								widgets.splice(m, 1);
 								widgets.unshift(w);
+								for(var n=0;n<widgets.length;n++){
+									widgets[n].top = false;
+									widgets[n].down = false;
+									if(n==0){
+										widgets[n].top = true
+										widgets[n].down = false
+
+									}
+
+									if(n==widgets.length-1){
+										widgets[n].top=false
+										widgets[n].down=true
+									}
+								}
 								console.log(widgets);
 								return widgets;
 							}
