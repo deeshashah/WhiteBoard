@@ -47,36 +47,4 @@ const Widgets = ({widgets, updateWidget, loadWidgets, checked, togglePreview, de
 }
 
 
-
-// class Widgets extends Component{
-// 	constructor(props){
-// 		super(props);
-// 	}
-
-// 	render(){
-// 		return(
-// 			<div>
-// 		    	<HeadingWidget/>
-// 		    	<br></br>
-// 		    	<br></br>
-// 		    	<ListWidget/>  
-// 		    	<br></br>
-// 		    	<br></br>
-// 		    	<ParagraphWidget/>
-// 		    	<br></br>
-// 		    	<br></br>
-// 		    	<ImageWidget/>
-// 		    	<br></br>
-// 		    	<br></br>
-// 		    	<LinkWidget/>
-// 		    	<br></br>
-// 		  	</div>
-		    
-
-		    
-// 		)
-// 	}
-
-// }
-
 export default Widgets
