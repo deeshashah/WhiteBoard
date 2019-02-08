@@ -4,12 +4,8 @@ var courseService = new CourseService()
 const widgetReducer = (state = {widgets:[], checked: true, loadWidget:true}, action) => {
     switch(action.type){
         case 'DELETE_WIDGET':
-            const newWidgets = []
-            for(var i=0; i<state.widgets.length; i++){
-                if(state.widgets[i].id === action.widget.id){
-                    delete state.widgets[i];
-                }
-            }
+            state.widgets = courseService.deleteWidget(action.widget.id);
+
             return{
                 widgets:state.widgets,
                 checked: state.checked,
@@ -40,7 +36,7 @@ const widgetReducer = (state = {widgets:[], checked: true, loadWidget:true}, act
                 checked: s,
                 loadWidget: false
             };
-        case 'ADD_WIDGET':
+        case 'CREATE_WIDGET':
             state.widgets = courseService.createWidget(action.topicId, {
                 type: 'HEADING',
                 text: 'New Widget',
