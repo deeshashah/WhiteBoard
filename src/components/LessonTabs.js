@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 
+
 class LessonTabs extends Component{
 	constructor(props){
 		super(props)
