@@ -49,7 +49,27 @@ const dispatchToPropertyMatcher = (dispatch, ownProps) => ({
 		dispatch({
 			type:'POSITION_UP',
 			widget: widget
+		}),
+
+	findWidget : (widget) =>
+		dispatch({
+			type: 'FIND_WIDGET',
+			widget:widget
+		}),
+
+	findAllWidgetsForTopic : (widget) =>
+		dispatch({
+			type:'FIND_ALL_WIDGETS_FOR_TOPIC',
+			widget:widget,
+			topicId: ownProps.topic.id
+
+		}),
+
+	findAllWidgets : (widget) =>
+		dispatch({
+			type:'FIND_ALL_WIDGETS',
 		})
+
 
 });
 

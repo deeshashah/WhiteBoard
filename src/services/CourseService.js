@@ -1,41 +1,8 @@
 import courses from './courses.json'
 
-// const topics = [
-
-//               {
-//               	"id" : 1
-//                 "title": "DOM",
-//                 "widgets": [
-//                   {
-//                     "type": "HEADING",
-//                     "size": 1,
-//                     "text": "The Document Object Model"
-//                   },
-//                   {
-//                     "type": "PARAGRAPH",
-//                     "text": "This topic introduces the DOM"
-//                   },
-//                   {
-//                     "type": "LIST",
-//                     "items": "Nodes,Attributes,Tag names,IDs,Styles,Classes"
-//                   },
-//                   {
-//                     "type": "IMAGE",
-//                     "src": "https://picsum.photos/200"
-//                   },
-//                   {
-//                     "type": "LINK",
-//                     "title": "The DOM",
-//                     "href": "https://en.wikipedia.org/wiki/Document_Object_Model"
-//                   }
-//                 ]
-//                }
-//             ]
-
 class CourseService{
 	constructor(){
 		this.courses = courses;
-		//this.topics = topics;
 	}
 
 	createCourse = course => {
@@ -183,7 +150,7 @@ class CourseService{
 		}
 	};
 
-    updateWidget = (widgetId, widget) => {
+    updateWidget = (widgetId, newwidget) => {
         for(var i=0; i<this.courses.length; i++){
             var modules = this.courses[i].modules;
             for(var j=0; j<modules.length;j++){
@@ -195,7 +162,7 @@ class CourseService{
                         for(var m=0; m<widgets.length; m++){
                             if(widgets[m].id===widgetId){
                                 widgets = widgets.map(widget =>
-                                    widget.id === widgetId ? widget : widget)
+                                    widget.id === widgetId ? newwidget : widget)
                                 return widgets;
                             }
                         }
