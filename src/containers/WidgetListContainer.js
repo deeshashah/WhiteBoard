@@ -16,11 +16,6 @@ const dispatchToPropertyMatcher = (dispatch, ownProps) => ({
 			type:'UPDATE_WIDGET',
 			widget : widget,
 		}),
-	loadWidgets : () =>
-		dispatch({
-			type:'LOAD_WIDGETS',
-			topicId : ownProps.topic.id,
-		}),
 	togglePreview: () =>
 		dispatch({
 			type:'TOGGLE_PREVIEW',
@@ -57,7 +52,7 @@ const dispatchToPropertyMatcher = (dispatch, ownProps) => ({
 			widget:widget
 		}),
 
-	findAllWidgetsForTopic : (widget) =>
+	loadWidgets : (widget) =>
 		dispatch({
 			type:'FIND_ALL_WIDGETS_FOR_TOPIC',
 			widget:widget,

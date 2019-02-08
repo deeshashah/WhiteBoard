@@ -50,11 +50,12 @@ class WhiteBoard extends Component{
 	render(){
 		return(
 			<div>
-				
+
 				<Router>
 					<div>
-						<Link to="/course/table">Table</Link> |
-						<Link to="/course/grid">Grid</Link>
+						<center>To view in courses in table mode: <Link to="/course/table">Table</Link>
+							<br></br>
+							To view courses in grid mode: <Link to="/course/grid">Grid</Link></center>
 						<Route path="/course/table" render={() => 
 							<div>
 							<NavBar addCourse = {this.addCourse}/>

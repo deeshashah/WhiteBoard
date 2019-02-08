@@ -11,7 +11,7 @@ const widgetReducer = (state = {widgets:[], checked: true, loadWidget:true}, act
                 checked: state.checked,
                 loadWidget: false
             };
-        case 'LOAD_WIDGETS':
+        case 'FIND_ALL_WIDGETS_FOR_TOPIC':
             state.widgets = courseService.findWidgets(action.topicId);
             return{
                 widgets:state.widgets,
@@ -64,15 +64,13 @@ const widgetReducer = (state = {widgets:[], checked: true, loadWidget:true}, act
             };
         case 'FIND_WIDGET':
             return courseService.findWidget(action.widget.id);
-        case 'FIND_ALL_WIDGETS_FOR_TOPIC':
-            return courseService.findWidgets(action.topicId);
         case 'FIND_ALL_WIDGETS':
             return state.widgets;
 
           default:
               return state;
         }
-}
+};
     
 
 export default widgetReducer
