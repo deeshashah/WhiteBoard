@@ -33,11 +33,12 @@ const ListWidget = ({widget, updateWidget, checked}) =>
 									type="text"
 									className="form-control"
 									placeholder="Widget name"/><br></br>
+						<h3>Preview</h3>
 							</div>:''
 				}
 
 
-	          <h3>Preview</h3>
+
 	          {
 	          	widget.option===1 && <ul>
 		          {   		

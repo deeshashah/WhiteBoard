@@ -18,11 +18,11 @@ const ParagraphWidget = ({widget, updateWidget, checked}) =>
                       </div>
 
                       <input className="form-control" placeholder="Widget name"/>
-                      <br></br>
+                      <br></br><h3>Preview</h3>
 
                   </div>:''
               }
-            <h3>Preview</h3>
+
             <p>{widget.text}</p>
           </div>
         </div>

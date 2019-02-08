@@ -18,8 +18,13 @@ const WidgetComponent = ({widget, updateWidget, checked, deleteWidget, changePos
 				<h4 className="widget-title"><b>{lowerCaseAllWordsExceptFirstLetters(widget.type)} widget {checked}</b></h4>
 	        </div>
 	        <div className="col-md-4">
-	            <button className="btn btn-warning" onClick={() => changePositionUp(widget)}> <i className="fa fa-arrow-up"></i> </button>
-				<button className="btn btn-warning"  onClick={()=>changePositionDown(widget)}> <i className="fa fa-arrow-down"></i> </button>
+				{
+					widget.top?'':<button className="btn btn-warning" onClick={() => changePositionUp(widget)}> <i className="fa fa-arrow-up"></i> </button>
+				}
+				{
+					widget.down?'':<button className="btn btn-warning"  onClick={()=>changePositionDown(widget)}> <i className="fa fa-arrow-down"></i> </button>
+				}
+
 				<select
 				  onChange={(event)=>{
 					  widget.type = event.target.value

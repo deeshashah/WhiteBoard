@@ -16,11 +16,11 @@ const ImageWidget = ({widget, updateWidget, checked}) =>
                         }}/>
                     <br></br>
                     <input type="text" className="form-control"aria-describedby="emailHelp" placeholder="Widget name"/>
-                    <br></br>
+                    <br></br><h3>Preview</h3>
                 </div>:''
             }
 
-          <h3>Preview</h3>
+
           <img src={widget.src}/>
           <br></br>
         </div>

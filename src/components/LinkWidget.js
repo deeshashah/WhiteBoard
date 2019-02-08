@@ -34,9 +34,10 @@ const LinkWidget = ({widget, updateWidget, checked}) =>
                           className="form-control"
                           placeholder="Widget name"
                       />
+                      <h3>Preview</h3>
                   </div>:''
               }
-            <h3>Preview</h3>
+
             <a href={widget.href}>{widget.title}</a>
             <br></br>
           </div>

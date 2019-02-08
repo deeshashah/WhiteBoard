@@ -5,10 +5,11 @@ const Widgets = ({widgets, updateWidget, loadWidgets, checked, togglePreview, de
 		loadWidgets();
 		return(<div>
 
-			<h3>Widgets : {widgets.length} {checked}</h3>
+
 			<div className="container">
 				<div className="row">
 					<div className="col-md-10">
+						<h5><small>There are {widgets.length} widgets for this topic. {checked}</small></h5>
 					</div>
 					<div className="col-md-1">
 						<button className="btn btn-success">Save</button>
@@ -29,6 +30,7 @@ const Widgets = ({widgets, updateWidget, loadWidgets, checked, togglePreview, de
 				widgets.map(widget =>
 					<WidgetComponent
 						widget={widget}
+						name={widget.name}
 						updateWidget={updateWidget}
 						checked={checked}
 						deleteWidget={deleteWidget}
@@ -44,37 +46,5 @@ const Widgets = ({widgets, updateWidget, loadWidgets, checked, togglePreview, de
 
 }
 
-
-
-// class Widgets extends Component{
-// 	constructor(props){
-// 		super(props);
-// 	}
-
-// 	render(){
-// 		return(
-// 			<div>
-// 		    	<HeadingWidget/>
-// 		    	<br></br>
-// 		    	<br></br>
-// 		    	<ListWidget/>  
-// 		    	<br></br>
-// 		    	<br></br>
-// 		    	<ParagraphWidget/>
-// 		    	<br></br>
-// 		    	<br></br>
-// 		    	<ImageWidget/>
-// 		    	<br></br>
-// 		    	<br></br>
-// 		    	<LinkWidget/>
-// 		    	<br></br>
-// 		  	</div>
-		    
-
-		    
-// 		)
-// 	}
-
-// }
 
 export default Widgets
