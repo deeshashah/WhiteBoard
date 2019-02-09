@@ -13,7 +13,9 @@ function lowerCaseAllWordsExceptFirstLetters(string) {
 
 const WidgetComponent = ({widget, updateWidget, checked, deleteWidget, changePositionDown, changePositionUp}) =>
 	<div className="container widget">
+		{checked?
 		<div className="row">
+
 	        <div className="col-md-8">
 				<h4 className="widget-title"><b>{lowerCaseAllWordsExceptFirstLetters(widget.type)} widget {checked}</b></h4>
 	        </div>
@@ -41,7 +43,7 @@ const WidgetComponent = ({widget, updateWidget, checked, deleteWidget, changePos
 	          </select>
 	          <button className="btn btn-danger" onClick={()=> deleteWidget(widget)}> <i className="fa fa-close"></i> </button>
 	        </div>
-		</div>
+		</div> : ''}
 	        {
 	        	widget.type === 'HEADING' && <HeadingWidget
 	        		updateWidget={updateWidget}

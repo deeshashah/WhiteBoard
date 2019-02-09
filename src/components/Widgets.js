@@ -8,15 +8,16 @@ const Widgets = ({widgets, updateWidget, loadWidgets, checked, togglePreview, de
 
 			<div className="container">
 				<div className="row">
-					<div className="col-md-10">
+					<div className="col-md-9">
 						<h5><small>There are {widgets.length} widgets for this topic. {checked}</small></h5>
 					</div>
 					<div className="col-md-1">
 						<button className="btn btn-success">Save</button>
 					</div>
-					<div className="col-md-1" >
+					<div className="col-md-2" >
 						<div className="form-group">
 							<span className="switch">
+							<label>Preview: </label>
 							  <input type="checkbox" className="switch" id="switch-id" onChange={togglePreview}/>
 							  <label htmlFor="switch-id"></label>
 							</span>
