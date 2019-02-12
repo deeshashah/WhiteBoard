@@ -5,14 +5,10 @@ import '../App.css'
 class NavBar extends Component{
 	constructor(props){
 		super(props);
-
-		this.newCourse = ""
 	}
 
 
-	formChanged = (event) => {
-		this.newCourse = event.target.value;
-	}
+
 
 
 
@@ -22,8 +18,8 @@ class NavBar extends Component{
 				<nav className="navbar navbar-expand-lg navbar-dark bg-primary">
 					<a className="navbar-brand" href="#"><b>Course Manager</b></a>
 						<a className="btn btn-primary" href="#">Home</a>
-						<input onChange={this.formChanged} placeholder="New course title"/>
-						<a onClick={() => this.props.addCourse(this.newCourse)} className="non-float">
+						<input onChange={this.props.titleChanged} placeholder="New course title"/>
+						<a onClick={this.props.addCourse} className="non-float">
 					    <i className="fa fa-plus plus-button"></i>
 					    
 					</a>

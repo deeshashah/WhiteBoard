@@ -1,6 +1,6 @@
 import courses from './courses.json'
 
-const COURSE_API_URL = 'http://localhost:8080/api/courses';
+const COURSE_API_URL = 'http://localhost:8080/api/courses/';
 
 
 class CourseService{
@@ -8,48 +8,47 @@ class CourseService{
 		this.courses = courses;
 	}
 
-	createCourse = course => {
-		if(course == null){
-			course = {
-				id : (new Date()).getTime(),
-				title: 'New Course'
-			}
-		}
 
-		this.courses.push(course)
-		return this.courses
-	}
+
+	createCourse = course => {
+        return fetch(COURSE_API_URL, {
+            body: JSON.stringify(course),
+            headers:{
+                'Content-Type': 'application/json'
+            },
+            method:'POST'
+        }).then(response => response.json());
+
+    };
+
+
 
 	findCourseById = courseId => {
-		for(var i=0;i<this.courses.length;i++){
-			if(this.courses[i].id == courseId){
-				return this.courses[i];
-			}
-		}
-	}
-
-	findAllCourses = () => {
-	    //console.log("here");
-		 var x =  fetch(COURSE_API_URL)
-             .then(response => response.json());
-		 console.log("here"+x);
-		 return x;
+		fetch(COURSE_API_URL+courseId)
+            .then(response=>response.json())
 	};
 
-	deleteCourse = deleteCourse => {
-		this.courses = this.courses.filter(
-				course => course.id !== deleteCourse.id
-			)
-		return this.courses
-	}
+	findAllCourses = () => {
+		 return fetch(COURSE_API_URL)
+             .then(response => response.json());
+	};
 
-	updateCourse = (id, course) => {
+
+	deleteCourse = courseId =>
+        fetch(COURSE_API_URL + courseId, {
+            method: 'delete',
+            headers: {
+                'content-type': 'application/json'   }
+        }).then(response => response.json());
+
+
+    updateCourse = (id, course) => {
 		for(var i=0;i<this.courses.length;i++){
 			if(this.courses[i] == id){
 				this.courses[i] = course
 			}
 		}
-	}
+	};
 
 	createModule = (courseId, module) => {
 		for(var i=0; i<this.courses.length; i++){

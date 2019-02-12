@@ -15,11 +15,11 @@ const store = createStore(widgetReducer)
 class CourseEditor extends Component{
 	constructor(props){
 		super(props);
-		this.courseService = new CourseService()
+		this.courseService = new CourseService();
 
-		this.courseId = parseInt(props.match.params.id)
+		this.courseId = parseInt(props.match.params.id);
 
-		this.course = this.courseService.findCourseById(this.courseId)
+		this.course = this.courseService.findCourseById(this.courseId);
 
 		this.state={
 			course : this.course,

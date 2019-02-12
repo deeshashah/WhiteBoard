@@ -18,7 +18,7 @@ const CourseTableRow = ({course, deleteCourse, selectCourse}) =>
 	  </Router>
 	  <td>me</td>
 	  <td>6:45PM</td>
-	  <td><a onClick={() => deleteCourse(course)}><i className="fa fa-close"></i></a></td>
+	  <td><a onClick={() => deleteCourse(course.id)}><i className="fa fa-close"></i></a></td>
 	</tr>
 
 
