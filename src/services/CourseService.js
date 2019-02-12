@@ -1,5 +1,8 @@
 import courses from './courses.json'
 
+const COURSE_API_URL = 'http://localhost:8080/api/courses';
+
+
 class CourseService{
 	constructor(){
 		this.courses = courses;
@@ -26,8 +29,12 @@ class CourseService{
 	}
 
 	findAllCourses = () => {
-		 return this.courses
-	}
+	    //console.log("here");
+		 var x =  fetch(COURSE_API_URL)
+             .then(response => response.json());
+		 console.log("here"+x);
+		 return x;
+	};
 
 	deleteCourse = deleteCourse => {
 		this.courses = this.courses.filter(

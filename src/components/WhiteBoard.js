@@ -15,10 +15,17 @@ class WhiteBoard extends Component{
 		this.courseService = new CourseService();
 		this.state = {
 			newCourse : '',
-			courses : this.courseService.findAllCourses(),
+			courses : [],
 			selectCourse:"",
 			showNavBar : true
 		}
+	}
+
+	componentDidMount() {
+		console.log("here");
+		this.courseService.findAllCourses()
+			.then(courses =>
+				this.setState({courses:courses}));
 	}
 
 	addCourse = (title) => {
