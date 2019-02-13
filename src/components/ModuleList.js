@@ -15,10 +15,12 @@ class ModuleList extends Component{
 	}
 
 	componentWillReceiveProps(nextProps){
-
 		if(nextProps.course !== this.props.course){
 			this.findAllModules(nextProps.course.id);
-			this.setState({ course: nextProps.course })
+			this.setState({
+				course: nextProps.course,
+
+				})
 		}
 	}
 

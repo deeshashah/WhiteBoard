@@ -319,3 +319,7 @@
 .switch.switch-sm {
     font-size: 0.875rem;
 }
+
+.oneline{
+    display: inline;
+}

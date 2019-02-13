@@ -3,10 +3,16 @@
 const COURSE_API_URL = 'http://localhost:8080/api/courses/';
 const MODULES_API_URL = 'http://localhost:8080/api/modules/';
 
+
 class ModuleService{
     findAllModules= (courseId) => {
         console.log(COURSE_API_URL+courseId+'/modules');
         return fetch(COURSE_API_URL+courseId+'/modules')
+            .then(response => response.json());
+    };
+
+    findModuleById = (moduleId) => {
+        return fetch(MODULES_API_URL+moduleId)
             .then(response => response.json());
     };
 
@@ -22,7 +28,7 @@ class ModuleService{
 
     };
 
-    deleteModule = (courseId, deleteModule) => {
+    deleteModule = (deleteModule) => {
         fetch(MODULES_API_URL + deleteModule.id, {
             method: 'delete',
             headers: {
@@ -39,11 +45,9 @@ class ModuleService{
                 'content-type':'application/json'
             }
         }).then(response => response.json());
-
-
-
-
     };
+
+
 }
 
 export default ModuleService

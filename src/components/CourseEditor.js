@@ -10,6 +10,7 @@ import widgetReducer from '../reducers/WidgetReducer'
 import {createStore} from 'redux'
 import {Provider} from 'react-redux'
 import ModuleService from "../services/ModuleService";
+import LessonService from "../services/LessonService"
 
 const store = createStore(widgetReducer)
 
@@ -18,6 +19,7 @@ class CourseEditor extends Component{
 		super(props);
 		this.courseService = new CourseService();
 		this.moduleService = new ModuleService();
+		this.lessonService = new LessonService();
 		this.courseId = parseInt(props.match.params.id);
 
 		//this.course = this.courseService.findCourseById(this.courseId);
@@ -25,6 +27,8 @@ class CourseEditor extends Component{
 		this.state={
 			course : '',
             modules : [],
+			module: '',
+			lesson:'',
 			// module : this.course.modules[0],
 			// selectedLesson : this.course.modules[0].lessons[0],
 			// changeLesson : {title:'', topics:[]},
@@ -48,26 +52,28 @@ class CourseEditor extends Component{
 	findAllCourses = () => {
 		this.courseService.findAllCourses()
 			.then(courses =>
-				this.setState({courses: courses}));
-	};
-
-	selectCourse = (courseId) => {
-
-		this.courseService.findCourseById(courseId)
-			.then(course =>
 				this.setState({
-					course: course,
+					courses: courses
 				}));
 	};
 
-	selectModule = module => {
-		this.setState({
-	      module: module,
-	      // selectedLesson:module.lessons[0],
-			// selectedTopic : module.lessons[0].topics[0],
-			// widgets:module.lessons[0].topics[0].widgets
+	selectCourse = (courseId) => {
+		this.courseService.findCourseById(courseId)
+			.then(course =>{
+				this.setState({
+					course: course,
+					module:this.state.module!==''? this.state.module:course.modules[0],
+					lesson:this.state.lesson!==''? this.state.lesson:course.modules[0].lessons[0]
+				})});
+	};
 
-		});
+	selectModule = module => {
+		this.moduleService.findModuleById(module.id)
+			.then(module =>
+				this.setState({
+					module:module,
+					lesson:this.state.lesson!==''? this.state.lesson:module.lessons[0]
+				}))
 
 	};
 
@@ -82,7 +88,7 @@ class CourseEditor extends Component{
 
 	deleteModule = (module) => {
 		console.log(module.title);
-		this.moduleService.deleteModule(this.state.course.id, module)
+		this.moduleService.deleteModule(module);
 		this.selectCourse(this.state.course.id);
 
 	};
@@ -97,17 +103,35 @@ class CourseEditor extends Component{
 
 	};
 
+	createLesson = (moduleId, lesson) => {
+		this.lessonService.createLesson(moduleId, lesson)
+			.then(lesson => {
+				this.selectModule(this.state.module);
+				this.selectCourse(this.state.course.id)
+			})
+	};
+
+	deleteLesson = (lessonDelete) => {
+		console.log(lessonDelete.title);
+		this.lessonService.deleteLesson(lessonDelete);
+		this.selectModule(this.state.module);
+	};
+
+	updateLesson = (lesson) => {
+		this.lessonService.updateLesson(lesson)
+			.then(lesson => {
+				this.selectModule(this.state.module);
+				this.selectCourse(this.state.course.id)
+			});
+	};
+
 	selectLesson = lesson => {
-		this.setState({
-			selectedLesson:lesson,
-			selectedTopic : lesson.topics[0],
-			widgets: lesson.topics[0].widgets
-
-		})
-
-
-
-	}
+		this.lessonService.findLessonById(lesson.id)
+			.then(lesson =>
+				this.setState({
+					lesson:lesson,
+				}));
+	};
 
 	selectTopic = (topic) => {
 		this.setState({
@@ -116,11 +140,11 @@ class CourseEditor extends Component{
 		})
 	}  
 
-	lessonChange = (event) => {
-		this.setState({
-			changeLesson : {title: event.target.value}
-		})
-	}
+	// lessonChange = (event) => {
+	// 	this.setState({
+	// 		changeLesson : {title: event.target.value}
+	// 	})
+	// }
 
 	topicChange = (event) => {
 		this.setState({
@@ -128,25 +152,9 @@ class CourseEditor extends Component{
 		})
 	}
 
-	deleteLesson = (lessonDelete) => {
-		const module = this.state.module
-		console.log(module);
-		module.lessons = module.lessons.filter(
-				lesson => lesson.id !== lessonDelete.id
-		)
-		this.setState({
-			module : module
-		})
-	}
 
-	addLesson = () => {
-		
-		const module = this.state.module
-		module.lessons.push(this.state.changeLesson)
-		this.setState({
-			module:module
-		})
-	}
+
+
 
 
 	editLesson = (lesson) => {
@@ -155,20 +163,7 @@ class CourseEditor extends Component{
 		})
 	}
 
-	updateLesson = () => {
-		const module = this.state.module
-		const addLessons = module.lessons
-		for(var i=0;i<addLessons.length;i++){
-			if(addLessons[i] === this.state.selectedLesson){
-				addLessons[i].title = this.state.changeLesson.title
-			}
-		}
-		module.lessons = addLessons
-		this.setState({
-			module:module
-		})
 
-	};
 
 	addTopic = () => {
 		const lesson = this.state.selectedLesson
@@ -218,6 +213,15 @@ class CourseEditor extends Component{
 	render(){
 		return(
 			<div>
+				<LessonTabs
+					course = {this.state.course}
+					module={this.state.module}
+					createLesson={this.createLesson}
+					deleteLesson={this.deleteLesson}
+					selectLesson={this.selectLesson}
+					selectedLesson={this.state.lesson}
+					updateLesson={this.updateLesson}
+				/>
 				{/*<LessonTabs*/}
 	                {/*lessons = {this.state.module.lessons}*/}
 	                {/*selectLesson = {this.selectLesson}*/}
@@ -272,7 +276,6 @@ class CourseEditor extends Component{
 	                </div>
 	            </div>
 	            </div>
-	            <h3>Course: {this.state.course.id}</h3>
 			</div>
 		)
 	}

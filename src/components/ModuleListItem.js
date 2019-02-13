@@ -3,7 +3,7 @@ import React, {Component} from 'react'
 
 const ModuleListItem = ({module, selectModule, deleteModule, editRow, selectedModule}) =>
 	
-		<div className={module===selectedModule?"active-topic":"topic"}  onClick={() => selectModule(module)}>
+		<div className={module.id===selectedModule.id?"active-topic":"topic"}  onClick={() => selectModule(module)}>
 	        <a>
 	        	{module.title}
 	        </a>
