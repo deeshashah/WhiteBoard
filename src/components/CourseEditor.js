@@ -9,6 +9,7 @@ import WidgetListContainer from "../containers/WidgetListContainer";
 import widgetReducer from '../reducers/WidgetReducer'
 import {createStore} from 'redux'
 import {Provider} from 'react-redux'
+import ModuleService from "../services/ModuleService";
 
 const store = createStore(widgetReducer)
 
@@ -16,61 +17,85 @@ class CourseEditor extends Component{
 	constructor(props){
 		super(props);
 		this.courseService = new CourseService();
-
+		this.moduleService = new ModuleService();
 		this.courseId = parseInt(props.match.params.id);
 
-		this.course = this.courseService.findCourseById(this.courseId);
+		//this.course = this.courseService.findCourseById(this.courseId);
 
 		this.state={
-			course : this.course,
-			module : this.course.modules[0],
-			selectedLesson : this.course.modules[0].lessons[0],
-			changeLesson : {title:'', topics:[]},
-			selectedTopic : this.course.modules[0].lessons[0].topics[0],
-			changeTopic: {title: ''},
-			widgets: this.course.modules[0].lessons[0].topics[0].widgets,
+			course : '',
+            modules : [],
+			// module : this.course.modules[0],
+			// selectedLesson : this.course.modules[0].lessons[0],
+			// changeLesson : {title:'', topics:[]},
+			// selectedTopic : this.course.modules[0].lessons[0].topics[0],
+			// changeTopic: {title: ''},
+			// widgets: this.course.modules[0].lessons[0].topics[0].widgets,
 
 		}
 
 
 	}
 
-	selectModule = module => {
+	componentDidMount() {
+		this.selectCourse(this.props.match.params.id);
+	}
 
+	componentWillReceiveProps(newProps) {
+		this.selectCourse(newProps.match.params.id);
+	}
+
+	findAllCourses = () => {
+		this.courseService.findAllCourses()
+			.then(courses =>
+				this.setState({courses: courses}));
+	};
+
+	selectCourse = (courseId) => {
+
+		this.courseService.findCourseById(courseId)
+			.then(course =>
+				this.setState({
+					course: course,
+				}));
+	};
+
+	selectModule = module => {
 		this.setState({
 	      module: module,
-	      selectedLesson:module.lessons[0],
-			selectedTopic : module.lessons[0].topics[0],
-			widgets:module.lessons[0].topics[0].widgets
+	      // selectedLesson:module.lessons[0],
+			// selectedTopic : module.lessons[0].topics[0],
+			// widgets:module.lessons[0].topics[0].widgets
 
 		});
 
 	};
 
 	createModule = (module) => {
-		const course = this.courseService.createModule(this.state.course.id, module);
-		this.setState({
-			course : course
-		})
+		this.moduleService.createModule(this.state.course.id, module)
+			.then(module => {
+				var course = this.state.course;
+				course.modules.push(module);
+				this.selectCourse(course.id)
+			});
 	};
 
-	deleteModule = (module, moduleTitle) => {
+	deleteModule = (module) => {
+		console.log(module.title);
+		this.moduleService.deleteModule(this.state.course.id, module)
+		this.selectCourse(this.state.course.id);
 
-		const course = this.courseService.deleteModule(this.state.course.id, module);
-		this.setState({
-			course : course
-		})
 	};
 
-	updateModule = (module, moduleTitle) => {
-		const course = this.courseService.updateModule(this.state.course.id, this.state.module, moduleTitle);
-		this.setState({
-			course:course
-		})
+	updateModule = (module) => {
+		this.moduleService.updateModule(module)
+			.then(module => {
+				this.selectModule(module);
+				this.selectCourse(this.state.course.id);
+
+			});
+
 	};
-
-
-
 
 	selectLesson = lesson => {
 		this.setState({
@@ -143,7 +168,7 @@ class CourseEditor extends Component{
 			module:module
 		})
 
-	}
+	};
 
 	addTopic = () => {
 		const lesson = this.state.selectedLesson
@@ -193,60 +218,61 @@ class CourseEditor extends Component{
 	render(){
 		return(
 			<div>
-				<LessonTabs
-	                lessons = {this.state.module.lessons}
-	                selectLesson = {this.selectLesson}
-	                module={this.state.module}
-	                selectedLesson = {this.state.selectedLesson}
-	                course={this.state.course}
-	                addLesson={this.addLesson}
-	                lessonChange={this.lessonChange}
-	                changeLesson={this.state.changeLesson}
-	                deleteLesson={this.deleteLesson}
-	                editLesson={this.editLesson}
-	                updateLesson={this.updateLesson}
-            	/>
+				{/*<LessonTabs*/}
+	                {/*lessons = {this.state.module.lessons}*/}
+	                {/*selectLesson = {this.selectLesson}*/}
+	                {/*module={this.state.module}*/}
+	                {/*selectedLesson = {this.state.selectedLesson}*/}
+	                {/*course={this.state.course}*/}
+	                {/*addLesson={this.addLesson}*/}
+	                {/*lessonChange={this.lessonChange}*/}
+	                {/*changeLesson={this.state.changeLesson}*/}
+	                {/*deleteLesson={this.deleteLesson}*/}
+	                {/*editLesson={this.editLesson}*/}
+	                {/*updateLesson={this.updateLesson}*/}
+            	{/*/>*/}
             	<div className="container">
             	<div className="row">
             		<div className="col-lg-2 col-sm-1">
 	            	<div className="sidenav">
 	            			<br></br>
-						<ModuleList
-							course={this.state.course}
-							selectModule={this.selectModule}
-							createModule = {this.createModule}
-							deleteModule = {this.deleteModule}
-							modules={this.course.modules}
-							updateModule={this.updateModule}
-							selectedModule = {this.state.module}
-							editRow = {this.editRow}
-						/>
 
+
+						<ModuleList
+							course = {this.state.course}
+							createModule ={this.createModule}
+							deleteModule = {this.deleteModule}
+							selectModule = {this.selectModule}
+							selectedModule = {this.state.module}
+							updateModule = {this.updateModule}
+
+						/>
 	                </div>
 	                </div>
 	                <div className="col-lg-10 col-sm-12">
 	                <br></br>
-	                
-	                <TopicPills 
-	                	topics={this.state.selectedLesson.topics}
-	                	addTopic={this.addTopic}
-	                	selectTopic={this.selectTopic}
-	                	selectedTopic={this.state.selectedTopic}
-	                	changeTopic={this.state.changeTopic}
-	                	topicChange={this.topicChange}
-	                	deleteTopic={this.deleteTopic}
-	                	editTopic={this.editTopic}
-	                	updateTopic={this.updateTopic}
-	                />
-	                <Provider store={store}>
-						<WidgetListContainer widgets={this.state.widgets}
-                        topic={this.state.selectedTopic}/>
-					</Provider>
+
+	                {/*<TopicPills */}
+	                	{/*topics={this.state.selectedLesson.topics}*/}
+	                	{/*addTopic={this.addTopic}*/}
+	                	{/*selectTopic={this.selectTopic}*/}
+	                	{/*selectedTopic={this.state.selectedTopic}*/}
+	                	{/*changeTopic={this.state.changeTopic}*/}
+	                	{/*topicChange={this.topicChange}*/}
+	                	{/*deleteTopic={this.deleteTopic}*/}
+	                	{/*editTopic={this.editTopic}*/}
+	                	{/*updateTopic={this.updateTopic}*/}
+	                {/*/>*/}
+	                {/*<Provider store={store}>*/}
+						{/*<WidgetListContainer widgets={this.state.widgets}*/}
+                        {/*topic={this.state.selectedTopic}/>*/}
+					{/*</Provider>*/}
 	                <br></br>
 
 	                </div>
 	            </div>
 	            </div>
+	            <h3>Course: {this.state.course.id}</h3>
 			</div>
 		)
 	}

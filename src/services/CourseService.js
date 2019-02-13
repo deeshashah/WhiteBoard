@@ -2,13 +2,10 @@ import courses from './courses.json'
 
 const COURSE_API_URL = 'http://localhost:8080/api/courses/';
 
-
 class CourseService{
 	constructor(){
 		this.courses = courses;
 	}
-
-
 
 	createCourse = course => {
         return fetch(COURSE_API_URL, {
@@ -24,8 +21,8 @@ class CourseService{
 
 
 	findCourseById = courseId => {
-		fetch(COURSE_API_URL+courseId)
-            .then(response=>response.json())
+		return fetch(COURSE_API_URL+courseId)
+            .then(response=>response.json());
 	};
 
 	findAllCourses = () => {
@@ -46,58 +43,6 @@ class CourseService{
 		for(var i=0;i<this.courses.length;i++){
 			if(this.courses[i] == id){
 				this.courses[i] = course
-			}
-		}
-	};
-
-	createModule = (courseId, module) => {
-		for(var i=0; i<this.courses.length; i++){
-			if(this.courses[i].id === courseId){
-				this.courses[i].modules =
-					[
-						...this.courses[i].modules,
-						module
-					]
-				return this.courses[i]
-
-			}
-		}
-	};
-
-	deleteModule = (courseId, deleteModule) => {
-		for(var i=0; i<this.courses.length; i++){
-			if(this.courses[i].id === courseId){
-				this.courses[i].modules =
-					this.courses[i].modules.filter(
-						module => module.id !== deleteModule.id
-					);
-				return this.courses[i]
-
-			}
-		}
-	};
-
-	updateModule = (courseId, updateModule, newTitle) => {
-		for(var i=0; i<this.courses.length; i++){
-			if(this.courses[i].id === courseId){
-				var modules = this.courses[i].modules;
-				for(var j=0;j<modules.length; j++){
-					if(modules[j].id === updateModule.id){
-
-						modules[j].title = newTitle;
-						console.log("module" + modules[j].title);
-
-
-
-					}
-				}
-				this.courses[i].modules = modules;
-				console.log(this.courses[i]);
-				return this.courses[i];
-
-
-
-
 			}
 		}
 	};

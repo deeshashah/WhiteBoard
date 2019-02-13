@@ -26,14 +26,16 @@ class WhiteBoard extends Component{
 			course : {title:event.target.value}
 		});
 
-	componentDidMount = () =>
-		this.findAllCourses();
+	componentDidMount = () => {
 
-	findAllCourses = () =>
+		this.findAllCourses();
+	}
+
+	findAllCourses = () => {
 		this.courseService.findAllCourses()
 			.then(courses =>
-				this.setState({courses:courses}));
-
+				this.setState({courses: courses}));
+	};
 
 	addCourse = () => {
 		this.courseService
