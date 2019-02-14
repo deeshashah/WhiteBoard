@@ -164,11 +164,6 @@ class CourseEditor extends Component{
 		this.selectLesson(this.state.lesson);
 	};
 
-	editTopic = (topic) => {
-		this.setState({
-			changeTopic : {title: topic.title}
-		})
-	};
 
 	updateTopic = (topic) => {
 		this.topicService.updateTopic(topic)
