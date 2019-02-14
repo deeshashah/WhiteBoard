@@ -14,38 +14,51 @@ class WhiteBoard extends Component{
 
 		this.courseService = new CourseService();
 		this.state = {
-			newCourse : '',
-			courses : this.courseService.findAllCourses(),
+			course : '',
+			courses : [],
 			selectCourse:"",
 			showNavBar : true
 		}
 	}
 
-	addCourse = (title) => {
+	titleChanged = (event) =>
 		this.setState({
-			courses: this.courseService.createCourse({
-				id:(new Date()).getTime(),
-				title:title,
-			})
-		})
+			course : {title:event.target.value}
+		});
+
+	componentDidMount = () => {
+
+		this.findAllCourses();
 	}
 
-	deleteCourse = course => {
-		this.setState({
-			courses: this.courseService.deleteCourse(course)
-		})
-	}
+	findAllCourses = () => {
+		this.courseService.findAllCourses()
+			.then(courses =>
+				this.setState({courses: courses}));
+	};
+
+	addCourse = () => {
+		this.courseService
+			.createCourse(this.state.course)
+			.then(() =>
+				this.findAllCourses());
+	};
+
+	deleteCourse = courseId =>
+		this.courseService.deleteCourse(courseId)
+			.then(() =>
+				this.findAllCourses());
 
 	hideNavBar = () => {
 		this.setState({
 			showNavBar : false
 		})
-	}
+	};
 
 	selectCourse = course => {
 		this.hideNavBar();
 		this.setState({selectedCourse: course})
-	}
+	};
 
 	render(){
 		return(
@@ -58,7 +71,7 @@ class WhiteBoard extends Component{
 							To view courses in grid mode: <Link to="/course/grid">Grid</Link></center>
 						<Route path="/course/table" render={() => 
 							<div>
-							<NavBar addCourse = {this.addCourse}/>
+							<NavBar addCourse = {this.addCourse} titleChanged = {this.titleChanged}/>
 							<CourseTable 
 							addCourse = {this.addCourse}
 							courses={this.state.courses}

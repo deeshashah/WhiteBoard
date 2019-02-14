@@ -5,7 +5,7 @@ import '../node_modules/bootstrap/dist/css/bootstrap.css'
 import '../node_modules/font-awesome/css/font-awesome.min.css'
 import widgetReducer from './reducers/WidgetReducer'
 import {createStore} from 'redux'
-
+import  './App.css'
 
 
 const store = createStore(widgetReducer)
