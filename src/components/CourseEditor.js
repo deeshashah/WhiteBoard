@@ -53,6 +53,7 @@ class CourseEditor extends Component{
 	}
 
 	findAllCourses = () => {
+
 		this.courseService.findAllCourses()
 			.then(courses =>
 				this.setState({
@@ -192,6 +193,7 @@ class CourseEditor extends Component{
 	render(){
 		return(
 			<div>
+				<h1>Here</h1>
 				<LessonTabs
 					course = {this.state.course}
 					module={this.state.module}
@@ -234,13 +236,13 @@ class CourseEditor extends Component{
 	                </div>
 	                <div className="col-lg-10 col-sm-12">
 	                <br></br>
-					<TopicPills
-						lesson = {this.state.lesson}
-						createTopic = {this.createTopic}
-						deleteTopic = {this.deleteTopic}
-						selectTopic = {this.selectTopic}
-						selectedTopic ={this.state.topic}
-						updateTopic = {this.updateTopic}/>
+					{/*<TopicPills*/}
+						{/*lesson = {this.state.lesson}*/}
+						{/*createTopic = {this.createTopic}*/}
+						{/*deleteTopic = {this.deleteTopic}*/}
+						{/*selectTopic = {this.selectTopic}*/}
+						{/*selectedTopic ={this.state.topic}*/}
+						{/*updateTopic = {this.updateTopic}/>*/}
 	                {/*<TopicPills */}
 	                	{/*topics={this.state.selectedLesson.topics}*/}
 	                	{/*addTopic={this.addTopic}*/}

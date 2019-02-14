@@ -6,18 +6,22 @@ import NavBar from './NavBar.js'
 import CourseService from '../services/CourseService'
 
 
-import {BrowserRouter as Router, Link, Route} from 'react-router-dom'
+import {BrowserRouter as Router, Link, Redirect, Route} from 'react-router-dom'
+import UserService from "../services/UserService";
 
 class WhiteBoard extends Component{
 	constructor(props){
 		super(props);
-
+		this.userService = new UserService();
 		this.courseService = new CourseService();
 		this.state = {
-			course : '',
+			user: {username:''},
+			course : {title: ''},
 			courses : [],
 			selectCourse:"",
-			showNavBar : true
+			showNavBar : true,
+			redirect:false,
+			loggedin:false
 		}
 	}
 
@@ -29,6 +33,7 @@ class WhiteBoard extends Component{
 	componentDidMount = () => {
 
 		this.findAllCourses();
+		this.profile();
 	}
 
 	findAllCourses = () => {
@@ -57,7 +62,27 @@ class WhiteBoard extends Component{
 
 	selectCourse = course => {
 		this.hideNavBar();
+
 		this.setState({selectedCourse: course})
+	};
+
+	profile = () => {
+		this.userService.profile()
+			.then(user => {
+				if(user){
+					this.setState({
+						user:user,
+					})
+				}
+
+			});
+	};
+
+	logout = () => {
+		this.userService.logout();
+		let path = '/';
+		this.props.history.push(path);
+
 	};
 
 	render(){
@@ -82,9 +107,7 @@ class WhiteBoard extends Component{
 							</div>
 							}
 						/>
-						<Route path="/course/edit/:id"
-		                   exact
-		                   component={CourseEditor}/>
+
 						<Route path="/course/grid" render={() => 
 							<div>
 							<NavBar addCourse = {this.addCourse}/>
@@ -101,6 +124,10 @@ class WhiteBoard extends Component{
 					</div>
 				</Router>
 
+				<h2>Welcome: {this.state.user.username}</h2>
+				<button className="btn btn-danger" onClick={this.logout}>
+					<Link to="\" className="link">Logout</Link>
+				</button>
 				
 			</div>
 

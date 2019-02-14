@@ -7,12 +7,18 @@ const MODULES_API_URL = 'http://localhost:8080/api/modules/';
 class ModuleService{
     findAllModules= (courseId) => {
         console.log(COURSE_API_URL+courseId+'/modules');
-        return fetch(COURSE_API_URL+courseId+'/modules')
+        return fetch(COURSE_API_URL+courseId+'/modules', {
+            credentials:"include",
+            method:'get'
+        })
             .then(response => response.json());
     };
 
     findModuleById = (moduleId) => {
-        return fetch(MODULES_API_URL+moduleId)
+        return fetch(MODULES_API_URL+moduleId, {
+            credentials:"include",
+            method:'get'
+        })
             .then(response => response.json());
     };
 
@@ -20,6 +26,7 @@ class ModuleService{
         console.log(module.title);
         return fetch(COURSE_API_URL+courseId+"/modules", {
             body: JSON.stringify(module),
+            credentials:"include",
             headers:{
                 'Content-Type': 'application/json'
             },
@@ -31,6 +38,7 @@ class ModuleService{
     deleteModule = (deleteModule) => {
         fetch(MODULES_API_URL + deleteModule.id, {
             method: 'delete',
+            credentials:"include",
             headers: {
                 'content-type': 'application/json'   },
         });
@@ -41,6 +49,7 @@ class ModuleService{
         return fetch(MODULES_API_URL+updateModule.id, {
             body:JSON.stringify(updateModule),
             method:'put',
+            credentials:"include",
             headers:{
                 'content-type':'application/json'
             }
