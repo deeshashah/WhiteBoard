@@ -28,8 +28,9 @@ class LessonService{
     };
 
     findLessonById = (lessonId) => {
+
         return fetch(LESSON_API_URL+lessonId)
-            .then(response=>response.json());
+            .then(response=> response.json());
     };
 
     updateLesson = (lesson) => {

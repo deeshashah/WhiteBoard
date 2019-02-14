@@ -86,14 +86,11 @@
 }
 
 .active-topic {
-    padding: 0.2em 0.2em 0.2em 0.2em;
-    margin: 0.5em;
-    text-decoration: none;
-    font-size: 1.5em;
-    color: white;
-    background-color: red;
-    display: block;
-    border-radius: 5px;
+    color: red;
+}
+
+#modulediv{
+    display: inline;
 }
 
 .topic a{
@@ -322,4 +319,57 @@
 
 .oneline{
     display: inline;
+}
+
+.lesson{
+
+    color: white;
+    margin-right: 1em;
+    font-size: 1.2em
+}
+
+.lessonactive{
+    display: inline;
+    color: #d9534f;
+}
+
+.lessonnotactive{
+    display: inline;
+}
+
+.addLesson{
+    display: inline !important;
+}
+
+.lessoninput{
+    height: calc(1.8rem + 1px) !important;
+}
+
+.topicdiv{
+    height: 60px;
+    background-color: #b2bec3;
+    color:white;
+    padding-top: 10px;
+    padding-left: 5px;
+    padding-right: 5px;
+    border: 2px solid #636e72;
+    border-radius: 10px;
+    border-width: 1px;
+}
+
+.topictitle{
+    display: inline;
+    margin-right: 5px;
+}
+
+.activetopic{
+    color: black;
+}
+
+.topicinput{
+    height: calc(1.8rem + 1px) !important;
+}
+
+.margindiv{
+    margin-top: 25px;
 }

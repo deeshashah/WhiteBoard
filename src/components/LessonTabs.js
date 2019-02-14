@@ -65,24 +65,28 @@ class LessonTabs extends Component{
 		        	{
 
 		        		this.state.lessons.map((lesson, key) =>
-		        			<li onClick = {() => this.props.selectLesson(lesson)} className={lesson.id==this.props.selectedLesson.id? "nav-item active" : "nav-item"} key={key}>
-					            <a className="nav-link">{lesson.title}
-					            	<a onClick={() => this.props.deleteLesson(lesson)}>
+		        			<li className="nav-item lesson" key={key}>
+					            <div onClick = {() => this.props.selectLesson(lesson)} className={lesson.id==this.props.selectedLesson.id? "lessonactive" : "lessonnotactive"}>{lesson.title}</div>
+					            	<button className="btn btn-danger btn-sm" onClick={() => this.props.deleteLesson(lesson)}>
 					            		<i className="plus fa fa-times"></i>
-					            	</a>
-					            	<a onClick={() => this.editLesson(lesson)}>
+					            	</button>
+					            	<button className="btn btn-warning btn-sm" onClick={() => this.editLesson(lesson)}>
 					            		<i className="plus fa fa-pencil"></i>
-					            	</a>
-								</a>
-
+					            	</button>
 					        </li>
 		        		)
 		        	}
 
 		          	<li className="nav-item">
-		          		<input onChange={this.titleChanged} value={this.state.lesson.title} placeholder="Add a new lesson"/>
-		          		<a onClick={() => this.props.createLesson(this.state.module.id, this.state.lesson)}><i className="plus fa fa-plus"></i></a>
-		          		<a onClick={() => this.props.updateLesson(this.state.lesson)}><i className="plus fa fa-check"></i></a>
+						<div className="form-inline">
+							<input onChange={this.titleChanged} value={this.state.lesson.title} type="text" className="form-control lessoninput" placeholder="Enter lesson" id="inputDefault"/>
+							<button className="btn btn-danger btn-sm" onClick={() => this.props.createLesson(this.state.module.id, this.state.lesson)}>
+								<i className="fa fa-plus"></i>
+							</button>
+							<button className="btn btn-danger btn-sm" onClick={() => this.props.updateLesson(this.state.lesson)}>
+								<i className="fa fa-check"></i>
+							</button>
+						</div>
 		          	</li>
 		        </ul>
 		      </div>
