@@ -6,18 +6,22 @@ import NavBar from './NavBar.js'
 import CourseService from '../services/CourseService'
 
 
-import {BrowserRouter as Router, Link, Route} from 'react-router-dom'
+import {BrowserRouter as Router, Link, Redirect, Route} from 'react-router-dom'
+import UserService from "../services/UserService";
 
 class WhiteBoard extends Component{
 	constructor(props){
 		super(props);
-
+		this.userService = new UserService();
 		this.courseService = new CourseService();
 		this.state = {
-			course : '',
+			user: {username:''},
+			course : {title: ''},
 			courses : [],
 			selectCourse:"",
-			showNavBar : true
+			showNavBar : true,
+			redirect:false,
+			loggedin:false
 		}
 	}
 
@@ -29,6 +33,7 @@ class WhiteBoard extends Component{
 	componentDidMount = () => {
 
 		this.findAllCourses();
+		this.profile();
 	}
 
 	findAllCourses = () => {
@@ -57,51 +62,82 @@ class WhiteBoard extends Component{
 
 	selectCourse = course => {
 		this.hideNavBar();
+
 		this.setState({selectedCourse: course})
+	};
+
+	profile = () => {
+		this.userService.profile()
+			.then(user => {
+				if(user){
+					this.setState({
+						user:user,
+					})
+				}
+
+			});
+	};
+
+	logout = () => {
+		this.userService.logout();
+		let path = '/';
+		this.props.history.push(path);
+
 	};
 
 	render(){
 		return(
 			<div>
 
+				<center><h2>Welcome, {this.state.user.username}</h2></center>
+				<center><button className="btn btn-danger" onClick={this.logout}>
+					<Link to="\" className="link">Logout</Link>
+				</button>
+					<button className="btn btn-info">
+						<Link to="/profile" className="link profilebutton">Profile</Link>
+					</button></center>
 				<Router>
-					<div>
-						<center>To view in courses in table mode: <Link to="/course/table">Table</Link>
-							<br></br>
-							To view courses in grid mode: <Link to="/course/grid">Grid</Link></center>
-						<Route path="/course/table" render={() => 
+					<center><div>
+
+						<button className="btn btn-warning">
+							<Link to="/course/table" className="link">View courses (List mode)</Link>
+						</button>
+						<button className="btn btn-secondary">
+							<Link to="/course/grid" className="link">View courses (Grid mode)</Link>
+						</button>
+						<Route path="/course/table" exact render={() =>
 							<div>
-							<NavBar addCourse = {this.addCourse} titleChanged = {this.titleChanged}/>
-							<CourseTable 
-							addCourse = {this.addCourse}
-							courses={this.state.courses}
-							deleteCourse = {this.deleteCourse}
-							selectCourse ={this.selectCourse}
-							hideNavBar = {this.hideNavBar}
-							/>
+								<NavBar addCourse = {this.addCourse} titleChanged = {this.titleChanged}/>
+								<CourseTable
+									addCourse = {this.addCourse}
+									courses={this.state.courses}
+									deleteCourse = {this.deleteCourse}
+									selectCourse ={this.selectCourse}
+									hideNavBar = {this.hideNavBar}
+								/>
 							</div>
-							}
-						/>
-						<Route path="/course/edit/:id"
-		                   exact
-		                   component={CourseEditor}/>
-						<Route path="/course/grid" render={() => 
-							<div>
-							<NavBar addCourse = {this.addCourse}/>
-							<br></br>
-							<CourseGrid 
-							courses={this.state.courses}
-							deleteCourse = {this.deleteCourse} 
-							addCourse ={this.addCourse}
-							selectCourse = {this.selectCourse}
-							/></div>
 						}
-							
 						/>
-					</div>
+
+						<Route path="/course/grid" render={() =>
+							<div>
+								<NavBar addCourse = {this.addCourse}/>
+								<br></br>
+								<CourseGrid
+									courses={this.state.courses}
+									deleteCourse = {this.deleteCourse}
+									addCourse ={this.addCourse}
+									selectCourse = {this.selectCourse}
+								/></div>
+						}
+
+						/>
+					</div></center>
 				</Router>
 
-				
+
+
+
 			</div>
 
 		)

@@ -53,6 +53,7 @@ class CourseEditor extends Component{
 	}
 
 	findAllCourses = () => {
+
 		this.courseService.findAllCourses()
 			.then(courses =>
 				this.setState({
@@ -63,10 +64,11 @@ class CourseEditor extends Component{
 	selectCourse = (courseId) => {
 		this.courseService.findCourseById(courseId)
 			.then(course =>{
+
 				this.setState({
 					course: course,
 					module:this.state.module!==''? this.state.module:course.modules[0],
-					lesson:this.state.lesson!==''? this.state.lesson:course.modules[0].lessons[0],
+					lesson:this.state.lesson!==''?this.state.lesson:course.modules[0].lessons[0],
 					topic:this.state.topic!==''?this.state.topic:course.modules[0].lessons[0].topics[0]
 				})});
 	};
@@ -76,7 +78,8 @@ class CourseEditor extends Component{
 			.then(module =>
 				this.setState({
 					module:module,
-					lesson:this.state.lesson!==''? this.state.lesson:module.lessons[0]
+					lesson:module.lessons[0],
+					topic:module.lessons[0].topics[0]
 				}))
 
 	};
@@ -192,6 +195,7 @@ class CourseEditor extends Component{
 	render(){
 		return(
 			<div>
+				<h1>Here</h1>
 				<LessonTabs
 					course = {this.state.course}
 					module={this.state.module}
@@ -234,6 +238,7 @@ class CourseEditor extends Component{
 	                </div>
 	                <div className="col-lg-10 col-sm-12">
 	                <br></br>
+
 					<TopicPills
 						lesson = {this.state.lesson}
 						createTopic = {this.createTopic}
@@ -252,10 +257,10 @@ class CourseEditor extends Component{
 	                	{/*editTopic={this.editTopic}*/}
 	                	{/*updateTopic={this.updateTopic}*/}
 	                {/*/>*/}
-	                {/*<Provider store={store}>*/}
-						{/*<WidgetListContainer widgets={this.state.widgets}*/}
-                        {/*topic={this.state.selectedTopic}/>*/}
-					{/*</Provider>*/}
+	                <Provider store={store}>
+						<WidgetListContainer
+                        topic={this.state.topic}/>
+					</Provider>
 	                <br></br>
 
 	                </div>

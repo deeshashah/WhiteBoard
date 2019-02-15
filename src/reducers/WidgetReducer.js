@@ -1,7 +1,45 @@
 import CourseService from "../services/CourseService"
 var courseService = new CourseService()
 
-const widgetReducer = (state = {widgets:[], checked: true, loadWidget:true}, action) => {
+const widgets= [
+    {
+        id: 801,
+        name: "Heading",
+        type: "HEADING",
+        text: "The DOM",
+        size: 1
+    },
+    {
+        id: 802,
+        name: "Paragraph",
+        type: "PARAGRAPH",
+        text: "This topic introduces the DOM"
+    },
+    {
+        id: 803,
+        name: "Image",
+        type: "IMAGE",
+        src: "https://picsum.photos/200"
+    },
+    {
+        id: 811,
+        name: "Link",
+        type: "LINK",
+        href: "flatcolors.io",
+        title: "www.flatcolors.io"
+    },
+    {
+        id : 514,
+        name: "image",
+        type: "LIST",
+        option: 1,
+        items: "Nodes,Attributes,Tag names,IDs,Styles,Classes"
+    }
+
+];
+
+
+const widgetReducer = (state = {widgets:widgets, checked: true, loadWidget:true}, action) => {
     switch(action.type){
         case 'DELETE_WIDGET':
             state.widgets = courseService.deleteWidget(action.widget.id);
@@ -12,7 +50,8 @@ const widgetReducer = (state = {widgets:[], checked: true, loadWidget:true}, act
                 loadWidget: false
             };
         case 'FIND_ALL_WIDGETS_FOR_TOPIC':
-            state.widgets = courseService.findWidgets(action.topicId);
+            //state.widgets = courseService.findWidgets(action.topicId);
+            console.log(state.widgets);
             return{
                 widgets:state.widgets,
                 checked: state.checked,

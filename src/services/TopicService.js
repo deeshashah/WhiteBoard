@@ -5,7 +5,9 @@ class TopicService{
 
     findAllTopics = (lessonId) => {
         console.log("What it is finding" + LESSON_API_URL+lessonId+"/lesson");
-        return fetch(LESSON_API_URL+lessonId+"/topic")
+        return fetch(LESSON_API_URL+lessonId+"/topic", {
+            credentials:"include",
+        })
             .then(response=>response.json())
     };
 
@@ -13,6 +15,7 @@ class TopicService{
         return fetch(LESSON_API_URL+lessonId+"/topic",{
             body:JSON.stringify(topic),
             method:'post',
+            credentials:"include",
             headers:{
                 'Content-Type': 'application/json'
             },
@@ -22,6 +25,7 @@ class TopicService{
     deleteTopic = (deleteTopic) =>{
         return fetch(TOPIC_API_URL+deleteTopic.id, {
             method: 'delete',
+            credentials:"include",
             headers: {
                 'content-type': 'application/json'   },
         })
@@ -31,6 +35,7 @@ class TopicService{
         return fetch(TOPIC_API_URL+topic.id, {
             body:JSON.stringify(topic),
             method:'put',
+            credentials:"include",
             headers:{
                 'content-type':'application/json'
             }

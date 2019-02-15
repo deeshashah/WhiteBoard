@@ -373,3 +373,36 @@
 .margindiv{
     margin-top: 25px;
 }
+
+.header{
+    display: inline !important;
+}
+
+.home-button{
+    margin-bottom: 1em;
+    margin-left: 2em;
+}
+
+.headline{
+    margin-top: 3em;
+    margin-bottom: 3em;
+}
+
+.col-form-label {
+    font-size: 1.1em;
+}
+
+.link {
+    color: white;
+}
+.link:hover {
+    color: white;
+}
+
+.profilebutton{
+    display: inline;
+}
+
+.moveright{
+    margin-left: 25px;
+}
