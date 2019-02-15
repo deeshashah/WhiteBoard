@@ -1,5 +1,5 @@
-const MODULE_API_URL = 'https://whiteboard-webservice.herokuapp.com/api/module/';
-const LESSON_API_URL = 'https://whiteboard-webservice.herokuapp.com/api/lesson/';
+const MODULE_API_URL = 'http://whiteboard-webservice.herokuapp.com/api/module/';
+const LESSON_API_URL = 'http://whiteboard-webservice.herokuapp.com/api/lesson/';
 
 class LessonService{
     findAllLessons = (moduleId) => {

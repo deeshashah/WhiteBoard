@@ -1,7 +1,7 @@
 
 
-const COURSE_API_URL = 'https://whiteboard-webservice.herokuapp.com/api/courses/';
-const MODULES_API_URL = 'https://whiteboard-webservice.herokuapp.com/api/modules/';
+const COURSE_API_URL = 'http://whiteboard-webservice.herokuapp.com/api/courses/';
+const MODULES_API_URL = 'http://whiteboard-webservice.herokuapp.com/api/modules/';
 
 
 class ModuleService{

@@ -1,4 +1,4 @@
-const USER_API_URL = 'https://whiteboard-webservice.herokuapp.com/api/';
+const USER_API_URL = 'http://whiteboard-webservice.herokuapp.com/api/';
 
 class UserService{
     register = (user) => {
