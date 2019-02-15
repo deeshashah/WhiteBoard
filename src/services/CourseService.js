@@ -1,6 +1,6 @@
 //import courses from './courses.json'
 const PROXY = 'https://cors-anywhere.herokuapp.com/';
-const COURSE_API_URL = PROXY+'http://whiteboard-webservice.herokuapp.com/api/courses/';
+const COURSE_API_URL = 'https://whiteboard-webservice.herokuapp.com/api/courses/';
 
 const courses = [
     {

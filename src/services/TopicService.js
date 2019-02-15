@@ -1,7 +1,7 @@
 const PROXY = 'https://cors-anywhere.herokuapp.com/';
 
-const TOPIC_API_URL = PROXY+'http://whiteboard-webservice.herokuapp.com/api/topic/';
-const LESSON_API_URL =PROXY+'http://whiteboard-webservice.herokuapp.com/api/lesson/';
+const TOPIC_API_URL = 'https://whiteboard-webservice.herokuapp.com/api/topic/';
+const LESSON_API_URL ='https://whiteboard-webservice.herokuapp.com/api/lesson/';
 
 class TopicService{
 

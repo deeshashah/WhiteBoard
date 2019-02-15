@@ -1,5 +1,5 @@
 const PROXY = 'https://cors-anywhere.herokuapp.com/';
-const USER_API_URL = PROXY+'http://whiteboard-webservice.herokuapp.com/api/';
+const USER_API_URL = 'https://whiteboard-webservice.herokuapp.com/api/';
 
 class UserService{
     register = (user) => {
