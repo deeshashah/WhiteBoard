@@ -97,7 +97,7 @@ class Login extends Component{
                         <div className="col-sm-10">
                             <input className="form-control"
                                    id="username"
-                                   placeholder="Deesha"
+                                   placeholder="alice"
                                    onChange={this.setUsername}
                             />
                         </div>
@@ -107,7 +107,7 @@ class Login extends Component{
                             Password: </label>
                         <div className="col-sm-10">
                             <input type="password" className="form-control wbdv-password-fld"
-                                   id="password" placeholder="deesha123"
+                                   id="password" placeholder="rabbit"
                                    onChange={this.setPassword}
                             />
                         </div>

@@ -15,13 +15,14 @@ class WhiteBoard extends Component{
 		this.userService = new UserService();
 		this.courseService = new CourseService();
 		this.state = {
-			user: {username:''},
+			user: {},
 			course : {title: ''},
 			courses : [],
 			selectCourse:"",
 			showNavBar : true,
 			redirect:false,
-			loggedin:false
+			loggedin:false,
+			userexists:false,
 		}
 	}
 
@@ -34,7 +35,8 @@ class WhiteBoard extends Component{
 
 		this.findAllCourses();
 		this.profile();
-	}
+
+	};
 
 	findAllCourses = () => {
 		this.courseService.findAllCourses()
@@ -70,9 +72,15 @@ class WhiteBoard extends Component{
 		this.userService.profile()
 			.then(user => {
 				if(user){
+					console.log("true");
 					this.setState({
 						user:user,
+						userexists:true,
 					})
+				}else{
+					this.userService.logout();
+					let path = '/login';
+					this.props.history.push(path);
 				}
 
 			});

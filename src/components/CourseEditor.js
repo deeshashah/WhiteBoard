@@ -223,8 +223,6 @@ class CourseEditor extends Component{
             		<div className="col-lg-2 col-sm-1">
 	            	<div className="sidenav">
 	            			<br></br>
-
-
 						<ModuleList
 							course = {this.state.course}
 							createModule ={this.createModule}
@@ -232,7 +230,6 @@ class CourseEditor extends Component{
 							selectModule = {this.selectModule}
 							selectedModule = {this.state.module}
 							updateModule = {this.updateModule}
-
 						/>
 	                </div>
 	                </div>
