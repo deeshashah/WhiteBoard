@@ -102,7 +102,7 @@ class Login extends Component{
                     <div className="form-group row">
                         <label className="col-sm-2 col-form-label"></label>
                         <div className="col-sm-10">
-                            <button className="btn btn-primary"
+                            <button type="submit" className="btn btn-primary"
                                onClick={this.login}> Sign in</button>
                             <button className="btn btn-danger" href="../index.html">Cancel</button>
                             <div className="row">

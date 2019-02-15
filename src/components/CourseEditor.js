@@ -64,10 +64,11 @@ class CourseEditor extends Component{
 	selectCourse = (courseId) => {
 		this.courseService.findCourseById(courseId)
 			.then(course =>{
+
 				this.setState({
 					course: course,
 					module:this.state.module!==''? this.state.module:course.modules[0],
-					lesson:this.state.lesson!==''? this.state.lesson:course.modules[0].lessons[0],
+					lesson:this.state.lesson!==''?this.state.lesson:course.modules[0].lessons[0],
 					topic:this.state.topic!==''?this.state.topic:course.modules[0].lessons[0].topics[0]
 				})});
 	};
@@ -236,13 +237,13 @@ class CourseEditor extends Component{
 	                </div>
 	                <div className="col-lg-10 col-sm-12">
 	                <br></br>
-					{/*<TopicPills*/}
-						{/*lesson = {this.state.lesson}*/}
-						{/*createTopic = {this.createTopic}*/}
-						{/*deleteTopic = {this.deleteTopic}*/}
-						{/*selectTopic = {this.selectTopic}*/}
-						{/*selectedTopic ={this.state.topic}*/}
-						{/*updateTopic = {this.updateTopic}/>*/}
+					<TopicPills
+						lesson = {this.state.lesson}
+						createTopic = {this.createTopic}
+						deleteTopic = {this.deleteTopic}
+						selectTopic = {this.selectTopic}
+						selectedTopic ={this.state.topic}
+						updateTopic = {this.updateTopic}/>
 	                {/*<TopicPills */}
 	                	{/*topics={this.state.selectedLesson.topics}*/}
 	                	{/*addTopic={this.addTopic}*/}
