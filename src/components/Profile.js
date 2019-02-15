@@ -10,6 +10,7 @@ class Profile extends Component {
             user: {},
             phone:'',
             didMount:false,
+            alert:false
         }
     }
 
@@ -68,6 +69,7 @@ class Profile extends Component {
                 this.setState({
                     user:user,
                     didMount:true,
+                    alert:true,
                 })})
 
     };
@@ -83,9 +85,9 @@ class Profile extends Component {
                         <Link to="\" className="link">Home</Link>
                     </div>
                 </div>
-                <div class="alert alert-success">
+                {this.state.alert? <div class="alert alert-success">
                     Profile successfully saved.
-                </div>
+                </div>:''}
                 <form>
                     <div class="form-group row">
                         <label for="username" class="col-sm-2 col-form-label">

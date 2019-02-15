@@ -238,6 +238,7 @@ class CourseEditor extends Component{
 	                </div>
 	                <div className="col-lg-10 col-sm-12">
 	                <br></br>
+
 					<TopicPills
 						lesson = {this.state.lesson}
 						createTopic = {this.createTopic}

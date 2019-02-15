@@ -402,3 +402,7 @@
 .profilebutton{
     display: inline;
 }
+
+.moveright{
+    margin-left: 25px;
+}

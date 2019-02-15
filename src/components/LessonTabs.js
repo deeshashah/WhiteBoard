@@ -88,7 +88,10 @@ class LessonTabs extends Component{
 							</button>
 						</div>
 		          	</li>
+
+
 		        </ul>
+
 		      </div>
 		    </nav>
 		)
