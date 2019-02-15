@@ -78,7 +78,8 @@ class CourseEditor extends Component{
 			.then(module =>
 				this.setState({
 					module:module,
-					lesson:this.state.lesson!==''? this.state.lesson:module.lessons[0]
+					lesson:module.lessons[0],
+					topic:module.lessons[0].topics[0]
 				}))
 
 	};
@@ -255,10 +256,10 @@ class CourseEditor extends Component{
 	                	{/*editTopic={this.editTopic}*/}
 	                	{/*updateTopic={this.updateTopic}*/}
 	                {/*/>*/}
-	                {/*<Provider store={store}>*/}
-						{/*<WidgetListContainer widgets={this.state.widgets}*/}
-                        {/*topic={this.state.selectedTopic}/>*/}
-					{/*</Provider>*/}
+	                <Provider store={store}>
+						<WidgetListContainer
+                        topic={this.state.topic}/>
+					</Provider>
 	                <br></br>
 
 	                </div>
