@@ -4,7 +4,6 @@ import ModuleList from "./ModuleList"
 import LessonTabs from "./LessonTabs"
 import TopicPills from "./TopicPills"
 
-import Widgets from "./Widgets"
 import WidgetListContainer from "../containers/WidgetListContainer";
 import widgetReducer from '../reducers/WidgetReducer'
 import {createStore} from 'redux'
@@ -24,20 +23,12 @@ class CourseEditor extends Component{
 		this.topicService = new TopicService();
 		this.courseId = parseInt(props.match.params.id);
 
-		//this.course = this.courseService.findCourseById(this.courseId);
-
 		this.state={
 			course : '',
             modules : [],
 			module: '',
 			lesson:'',
 			topic:'',
-			// module : this.course.modules[0],
-			// selectedLesson : this.course.modules[0].lessons[0],
-			// changeLesson : {title:'', topics:[]},
-			// selectedTopic : this.course.modules[0].lessons[0].topics[0],
-			// changeTopic: {title: ''},
-			// widgets: this.course.modules[0].lessons[0].topics[0].widgets,
 
 		}
 
@@ -144,12 +135,6 @@ class CourseEditor extends Component{
 	};
 
 
-	topicChange = (event) => {
-		this.setState({
-			changeTopic: {title: event.target.value}
-		})
-	};
-
 	createTopic = (lessonId, topic) => {
 		console.log(topic.title);
 		this.topicService.createTopic(lessonId, topic)
@@ -205,26 +190,11 @@ class CourseEditor extends Component{
 					selectedLesson={this.state.lesson}
 					updateLesson={this.updateLesson}
 				/>
-				{/*<LessonTabs*/}
-	                {/*lessons = {this.state.module.lessons}*/}
-	                {/*selectLesson = {this.selectLesson}*/}
-	                {/*module={this.state.module}*/}
-	                {/*selectedLesson = {this.state.selectedLesson}*/}
-	                {/*course={this.state.course}*/}
-	                {/*addLesson={this.addLesson}*/}
-	                {/*lessonChange={this.lessonChange}*/}
-	                {/*changeLesson={this.state.changeLesson}*/}
-	                {/*deleteLesson={this.deleteLesson}*/}
-	                {/*editLesson={this.editLesson}*/}
-	                {/*updateLesson={this.updateLesson}*/}
-            	{/*/>*/}
             	<div className="container">
             	<div className="row">
             		<div className="col-lg-2 col-sm-1">
 	            	<div className="sidenav">
 	            			<br></br>
-
-
 						<ModuleList
 							course = {this.state.course}
 							createModule ={this.createModule}
@@ -232,7 +202,6 @@ class CourseEditor extends Component{
 							selectModule = {this.selectModule}
 							selectedModule = {this.state.module}
 							updateModule = {this.updateModule}
-
 						/>
 	                </div>
 	                </div>
@@ -246,17 +215,6 @@ class CourseEditor extends Component{
 						selectTopic = {this.selectTopic}
 						selectedTopic ={this.state.topic}
 						updateTopic = {this.updateTopic}/>
-	                {/*<TopicPills */}
-	                	{/*topics={this.state.selectedLesson.topics}*/}
-	                	{/*addTopic={this.addTopic}*/}
-	                	{/*selectTopic={this.selectTopic}*/}
-	                	{/*selectedTopic={this.state.selectedTopic}*/}
-	                	{/*changeTopic={this.state.changeTopic}*/}
-	                	{/*topicChange={this.topicChange}*/}
-	                	{/*deleteTopic={this.deleteTopic}*/}
-	                	{/*editTopic={this.editTopic}*/}
-	                	{/*updateTopic={this.updateTopic}*/}
-	                {/*/>*/}
 	                <Provider store={store}>
 						<WidgetListContainer
                         topic={this.state.topic}/>
