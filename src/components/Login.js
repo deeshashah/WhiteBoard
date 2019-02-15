@@ -14,6 +14,10 @@ class Login extends Component{
         }
     }
 
+    componentDidMount() {
+        this.profile()
+    }
+
     setUsername = (event) => {
         this.setState({
             username:event.target.value
@@ -54,7 +58,17 @@ class Login extends Component{
 
     };
 
+    profile = () => {
+        this.userService.profile()
+            .then(user => {
+                if(user){
+                    this.setState({
+                        loggedin:true,
+                    })
+                }
 
+            });
+    };
 
     render() {
         if(this.state.redirect){

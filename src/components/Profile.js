@@ -8,23 +8,68 @@ class Profile extends Component {
         this.userService = new UserService();
         this.state = {
             user: {},
+            phone:'',
+            didMount:false,
         }
     }
 
     componentDidMount() {
-        this.profile();
+        if (this.state.didMount===false){
+            this.profile();}
     }
 
     profile = () => {
+        console.log("here");
         this.userService.profile()
             .then(user => {
                 if(user){
+                    console.log("user"+user);
                     this.setState({
                         user:user,
+                        didMount:true,
+                        role:user.role,
                     })
                 }
 
             });
+    };
+
+    setPhone = (event) => {
+        console.log(event.target.value);
+        this.setState({
+            phone:event.target.value,
+            didMount:true,
+        });
+    };
+
+    setEmail = (event) => {
+        this.setState({
+            email:event.target.value,
+            didMount:true,
+        })
+    };
+
+    setRole = (event) => {
+        this.setState({
+            role:event.target.value,
+            didMount:true,
+        })
+    };
+
+    update = (event) => {
+        event.preventDefault();
+        let newuser = this.state.user;
+        newuser.phone=this.state.phone;
+        newuser.email=this.state.email;
+        newuser.role=this.state.role;
+        this.userService.update(newuser)
+            .then(user =>{
+                console.log(user);
+                this.setState({
+                    user:user,
+                    didMount:true,
+                })})
+
     };
 
     render(){
@@ -49,7 +94,7 @@ class Profile extends Component {
                             <input class="form-control"
                                    id="username"
                                    placeholder="Deesha"
-                                   value={this.state.user.username} readonly/>
+                                   value={this.state.user.username} readOnly/>
                         </div>
                     </div>
                     <div class="form-group row">
@@ -57,26 +102,29 @@ class Profile extends Component {
                             Phone </label>
                         <div class="col-sm-10">
                             <input type="text" class="form-control"
-                                   id="phone" placeholder="9738328695"
-                                    value={this.state.user.phone}/>
+                                   id="phone"
+                                   type="tel"
+                                    placeholder={this.state.user.phone}
+                                    onChange={this.setPhone}/>
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label for="password" class="col-sm-2 col-form-label">
+                        <label for="email" class="col-sm-2 col-form-label">
                             Email </label>
                         <div class="col-sm-10">
                             <input type="email" class="form-control"
                                    id="email"
-                                   value={this.state.user.email}
-                                   placeholder="deesha@husky.neu.edu"/>
+                                   placeholder={this.state.user.email}
+                                   onChange={this.setEmail}
+                            />
                         </div>
                     </div>
                     <div class="form-group row">
                         <label for="password" class="col-sm-2 col-form-label">
                             Role </label>
                         <div class="col-sm-10">
-                            <select class="custom-select" id="role">
-                                <option selected="">{this.state.user.role}</option>
+                            <select class="custom-select" id="role" onChange={this.setRole}>
+                                <option selected="" value="Faculty">{this.state.user.role}</option>
                                 <option value="Student">Student</option>
                                 <option value="Admin">Admin</option>
                             </select>
@@ -93,7 +141,7 @@ class Profile extends Component {
                     <div class="form-group row">
                         <div class="col-sm-2"></div>
                         <div class="col-sm-10">
-                            <button class="btn btn-success profile-buttons"><Link to="\" className="link">Update</Link></button>
+                            <button class="btn btn-success profile-buttons" onClick={this.update}>Update</button>
                             <button class="btn btn-primary profile-buttons"><Link to="/whiteboard" className="link">Cancel</Link></button>
             </div>
     </div>

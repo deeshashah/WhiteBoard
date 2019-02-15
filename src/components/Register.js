@@ -13,9 +13,13 @@ class Register extends Component{
             showalert:false,
             registered_user:'',
             redirect:false,
-            alertduplicate:false
+            alertduplicate:false,
+            loggedin:false,
 
         }
+    }
+    componentDidMount() {
+        this.profile();
     }
 
     setUsername = (event) => {
@@ -73,9 +77,26 @@ class Register extends Component{
         }
     };
 
+    profile = () => {
+        this.userService.profile()
+            .then(user => {
+                if(user){
+                    this.setState({
+                        loggedin:true,
+                    })
+                }
+
+            });
+    };
+
+
     render(){
         if(this.state.redirect){
             return (<Redirect to={"/whiteboard"}/>);
+        }
+
+        if(this.state.loggedin){
+            return(<Redirect to={"/whiteboard"}/>)
         }
         return(
             <div className="container">
