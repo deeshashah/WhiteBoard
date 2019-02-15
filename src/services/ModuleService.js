@@ -1,7 +1,7 @@
 
 
-const COURSE_API_URL = 'http://localhost:8080/api/courses/';
-const MODULES_API_URL = 'http://localhost:8080/api/modules/';
+const COURSE_API_URL = 'https://whiteboard-webservice.herokuapp.com/api/courses/';
+const MODULES_API_URL = 'https://whiteboard-webservice.herokuapp.com/api/modules/';
 
 
 class ModuleService{

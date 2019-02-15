@@ -1,5 +1,5 @@
-const TOPIC_API_URL = 'http://localhost:8080/api/topic/';
-const LESSON_API_URL ='http://localhost:8080/api/lesson/';
+const TOPIC_API_URL = 'https://whiteboard-webservice.herokuapp.com/api/topic/';
+const LESSON_API_URL ='https://whiteboard-webservice.herokuapp.com/api/lesson/';
 
 class TopicService{
 
