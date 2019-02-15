@@ -398,3 +398,7 @@
 .link:hover {
     color: white;
 }
+
+.profilebutton{
+    display: inline;
+}

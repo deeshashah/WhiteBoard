@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import UserService from "../services/UserService";
+import {Link} from "react-router-dom";
 
 class Profile extends Component {
     constructor(props){
@@ -34,7 +35,7 @@ class Profile extends Component {
                         <h1>Profile</h1>
                     </div>
                     <div class="col-md-1">
-                        <a class="btn btn-primary" href="../index.html" class="sign">Home</a>
+                        <Link to="\" className="link">Home</Link>
                     </div>
                 </div>
                 <div class="alert alert-success">
@@ -56,7 +57,8 @@ class Profile extends Component {
                             Phone </label>
                         <div class="col-sm-10">
                             <input type="text" class="form-control"
-                                   id="phone" placeholder="9738328695"/>
+                                   id="phone" placeholder="9738328695"
+                                    value={this.state.user.phone}/>
                         </div>
                     </div>
                     <div class="form-group row">
@@ -64,7 +66,9 @@ class Profile extends Component {
                             Email </label>
                         <div class="col-sm-10">
                             <input type="email" class="form-control"
-                                   id="email" placeholder="deesha@husky.neu.edu"/>
+                                   id="email"
+                                   value={this.state.user.email}
+                                   placeholder="deesha@husky.neu.edu"/>
                         </div>
                     </div>
                     <div class="form-group row">
@@ -72,7 +76,7 @@ class Profile extends Component {
                             Role </label>
                         <div class="col-sm-10">
                             <select class="custom-select" id="role">
-                                <option selected="">Faculty</option>
+                                <option selected="">{this.state.user.role}</option>
                                 <option value="Student">Student</option>
                                 <option value="Admin">Admin</option>
                             </select>
@@ -89,9 +93,8 @@ class Profile extends Component {
                     <div class="form-group row">
                         <div class="col-sm-2"></div>
                         <div class="col-sm-10">
-                    <a class="btn btn-success profile-buttons">Update</a>
-                    <a class="btn btn-danger profile-buttons">Logout</a>
-                    <a class="btn btn-primary profile-buttons">Cancel</a>
+                            <button class="btn btn-success profile-buttons"><Link to="\" className="link">Update</Link></button>
+                            <button class="btn btn-primary profile-buttons"><Link to="/whiteboard" className="link">Cancel</Link></button>
             </div>
     </div>
     </form>

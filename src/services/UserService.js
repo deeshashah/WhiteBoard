@@ -9,7 +9,7 @@ class UserService{
             headers:{
                 'Content-Type':'application/json'
             }
-        }).then(response=>response.json()).catch(error => { console.log('request failed', error); });;
+        }).then(response=>response.json()).catch(error => { console.log('request failed', error); });
     };
 
     login = (user) => {

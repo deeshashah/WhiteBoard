@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import UserService from "../services/UserService";
-import {Redirect} from "react-router-dom";
+import {Link, Redirect} from "react-router-dom";
 
 class Register extends Component{
     constructor(props){
@@ -13,6 +13,7 @@ class Register extends Component{
             showalert:false,
             registered_user:'',
             redirect:false,
+            alertduplicate:false
 
         }
     }
@@ -53,10 +54,22 @@ class Register extends Component{
             user.username = this.state.username;
             user.password = this.state.password;
             this.userService.register(user)
-                .then(user => this.setState({
-                    registered_user: user,
-                    redirect:true,
-                }))
+                .then(user => {
+
+                    if(user===undefined){
+                        console.log("undefined");
+                        this.setState({
+                            alertduplicate:true,
+                            redirect:false
+                        })
+                    }else{
+                        this.setState({
+                            registered_user: user,
+                            redirect:true,
+                        })
+                    }
+
+                })
         }
     };
 
@@ -75,6 +88,9 @@ class Register extends Component{
                 <form>
                     {this.state.showalert? <div className="alert alert-danger">
                         Passwords don't match
+                    </div>:''}
+                    {this.state.alertduplicate? <div className="alert alert-danger">
+                        Username exists. Please choose a new one
                     </div>:''}
 
                     <div className="form-group row">
@@ -112,13 +128,9 @@ class Register extends Component{
                         <div className="col-sm-10">
                             <button className="btn btn-primary btn-block" type="submit" onClick={this.register}>Sign
                                 up</button>
-                            <button className="btn btn-danger btn-block">Cancel</button>
-                            <div className="row">
-                                {/* Implement Routing here*/}
-                                {/*<div className="col-6">*/}
-                                    {/*<a href="../login/login.template.client.html">Login</a>*/}
-                                {/*</div>*/}
-                            </div>
+                            <button className="btn btn-danger btn-block"><Link to="/" className="link">Cancel</Link></button>
+                            <button className="btn btn-warning btn-block"> <Link to="/login" className="link">Login</Link></button>
+
                         </div>
                     </div>
                 </form>

@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import UserService from "../services/UserService";
-import {Redirect} from "react-router-dom";
+import {Link, Redirect} from "react-router-dom";
 
 class Login extends Component{
     constructor(props) {
@@ -71,10 +71,9 @@ class Login extends Component{
                     <center>
 
                         <h1 className="header">Sign In</h1>
-                        <a className="btn btn-primary home-button" href="../index.html" className="sign">Home</a>
                     </center>
                     {this.state.alert? <div className="alert alert-danger">
-                        Username or Password incorrect.
+                        Username or Password incorrect
                     </div>:''}
                 </div>
                 <form>
@@ -104,14 +103,14 @@ class Login extends Component{
                         <div className="col-sm-10">
                             <button type="submit" className="btn btn-primary"
                                onClick={this.login}> Sign in</button>
-                            <button className="btn btn-danger" href="../index.html">Cancel</button>
+                            <button className="btn btn-danger"><Link to="/" className="link">Cancel</Link></button>
+                            <button className="btn btn-warning"> <Link to="/register" className="link">Register</Link></button>
                             <div className="row">
                                 <div className="col-6">
                                     <a href="#">Forgot Password?</a>
                                 </div>
                                 <div className="col-6">
-                                    <a href="../register/register.template.client.html" className="float-right">Sign
-                                        up</a>
+
                                 </div>
                             </div>
                         </div>
